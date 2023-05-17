@@ -5,11 +5,12 @@ import useNavigation from '../hooks/use-navigation';
 function HomePage() {
   const {navigate}= useNavigation();
   const handleButtonClick = ()=>{
-    navigate('/');
+    navigate('/Account');
   }
+
   return (
     <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen">
-      <div className="fixed inset-0 bg-noise"></div>
+      <MenuBar/>
       
       <div className="flex justify-center mt-8">
         <div className="grid grid-cols-3 gap-8 max-w-4xl">
