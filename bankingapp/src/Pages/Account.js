@@ -3,8 +3,14 @@ import { FaInfo,FaTimes,FaFolderOpen } from 'react-icons/fa';
 import useNavigation from '../hooks/use-navigation';
 function Account(){
     const {navigate}= useNavigation();
-    const handleButtonClick = ()=>{
+    const handleInfoClick = ()=>{
         navigate('/AccountInfo');
+      }
+      const handleOpenClick = ()=>{
+        navigate('/OpenAccount');
+      }
+      const handleCloseClick = ()=>{
+        navigate('/CloseAccount');
       }
     
     
@@ -13,9 +19,9 @@ function Account(){
         
           <div className="flex justify-center mt-8">
             <div className="grid grid-cols-3 gap-8 max-w-4xl">
-              <ButtonCard title="View Account" icon={FaInfo} onClick={handleButtonClick} />
-              <ButtonCard title="Open Account" icon={FaFolderOpen} onClick={handleButtonClick} />
-              <ButtonCard title="Close Account" icon={FaTimes} onClick={handleButtonClick} />
+              <ButtonCard title="View Account" icon={FaInfo} onClick={handleInfoClick} />
+              <ButtonCard title="Open Account" icon={FaFolderOpen} onClick={handleOpenClick} />
+              <ButtonCard title="Close Account" icon={FaTimes} onClick={handleCloseClick} />
             </div>
           </div>
         </div>

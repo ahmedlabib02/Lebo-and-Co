@@ -4,6 +4,8 @@ import Register from './Pages/Register';
 import HomePage from './Pages/HomePage';
 import Account from './Pages/Account';
 import AccountInfo from './Pages/AccountInfo';
+import OpenAccount from './Pages/OpenAccount';
+import CloseAccount from './Pages/CloseAccount';
 
 
 function App(){
@@ -26,7 +28,13 @@ function App(){
         </Route>    
         <Route path="/AccountInfo">
         <AccountInfo/>
-        </Route>    
+        </Route> 
+        <Route path="/OpenAccount">
+        <OpenAccount/>
+        </Route> 
+        <Route path="/CloseAccount">
+        <CloseAccount/>
+        </Route>     
          
   </div>);
 }
