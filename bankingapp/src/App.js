@@ -2,7 +2,7 @@ import Login from './Pages/Login';
 import Route from './Components/Route';
 import Register from './Pages/Register';
 import HomePage from './Pages/HomePage';
-
+import Loan from './Pages/Loan';
 
 function App(){
    
@@ -18,7 +18,10 @@ function App(){
         </Route>
       <Route path="/homepage">
         <HomePage/>
-        </Route>  
+        </Route> 
+        <Route path="/loans">
+        <Loan/>
+        </Route>   
   </div>);
 }
 

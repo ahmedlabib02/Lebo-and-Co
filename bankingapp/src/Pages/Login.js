@@ -8,6 +8,7 @@ function Login() {
   const handleLogin = () => {
     if (username === 'ahmed' && password === '123') {
       navigate('/homepage');
+      console.log("heyheyhey");
     }
   };
 
