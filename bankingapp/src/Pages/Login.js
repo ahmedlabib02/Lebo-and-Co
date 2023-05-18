@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Link from '../Components/Link';
 import useNavigation from "../hooks/use-navigation";
+import LoginImage from '../images/0eeea6fcffcb4a5f830fc34b089b2e4b (1) (1).png'
+
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,6 +19,11 @@ function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-md rounded px-8 py-6"> 
+      <div className="mb-4">
+          <img src={LoginImage} alt="Login" className="w-32 h-32 object-cover rounded-full mx-auto" />
+        </div>
+          
+          
           <div>
             <input
               type="text"
