@@ -6,6 +6,8 @@ import Account from './Pages/Account';
 import AccountInfo from './Pages/AccountInfo';
 import OpenAccount from './Pages/OpenAccount';
 import CloseAccount from './Pages/CloseAccount';
+import Bills from './Pages/Bills';
+import LivingBills from './Pages/LivingBills';
 
 
 function App(){
@@ -35,6 +37,12 @@ function App(){
         <Route path="/CloseAccount">
         <CloseAccount/>
         </Route>     
+        <Route path="/Bills">
+        <Bills/>
+        </Route> 
+        <Route path="/LivingBills">
+        <LivingBills/>
+        </Route>    
          
   </div>);
 }
