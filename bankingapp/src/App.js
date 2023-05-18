@@ -6,7 +6,9 @@ import Account from './Pages/Account';
 import AccountInfo from './Pages/AccountInfo';
 import OpenAccount from './Pages/OpenAccount';
 import CloseAccount from './Pages/CloseAccount';
-
+import CreditCard from './Pages/CreditCard';
+import ApplyCredit from './Pages/ApllyCredit';
+import MyCredit from './Pages/MyCredit';
 
 function App(){
    
@@ -34,7 +36,19 @@ function App(){
         </Route> 
         <Route path="/CloseAccount">
         <CloseAccount/>
-        </Route>     
+        </Route> 
+        <Route path="/CreditCard">
+        <CreditCard/>
+        </Route>
+        <Route path="/MyCredit">
+        <MyCredit/>
+        </Route>
+        <Route path="/ApplyCredit">
+        <ApplyCredit/>
+        </Route>
+        <Route path="/MyCredit">
+        <MyCredit/>
+        </Route>                 
          
   </div>);
 }
