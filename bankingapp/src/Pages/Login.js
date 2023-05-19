@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Link from '../Components/Link';
 import useNavigation from "../hooks/use-navigation";
-import LoginImage from '../images/0eeea6fcffcb4a5f830fc34b089b2e4b (1) (1).png'
+import LoginImage from '../images/bank logo.png'
+
 
 function Login() {
   const [username, setUsername] = useState('');
