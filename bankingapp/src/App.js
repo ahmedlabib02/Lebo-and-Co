@@ -2,30 +2,35 @@ import Login from './Pages/Login';
 import Route from './Components/Route';
 import Register from './Pages/Register';
 import HomePage from './Pages/HomePage';
-import Account from './Pages/Account';
-import AccountInfo from './Pages/AccountInfo';
-import OpenAccount from './Pages/OpenAccount';
-import CloseAccount from './Pages/CloseAccount';
+import Loan from './Pages/Loan';
+import Account from './Pages/Account/Account';
+import AccountInfo from './Pages/Account/AccountInfo';
+import OpenAccount from './Pages/Account/OpenAccount';
+import CloseAccount from './Pages/Account/CloseAccount';
+import CreditCard from './Pages/CreditCard/CreditCard';
+import ApplyCredit from './Pages/CreditCard/ApplyCredit';
+import MyCredit from './Pages/CreditCard/MyCredit';
+import Contact from './Pages/Contact';
 import Bills from './Pages/Bills';
 import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
-import Contact from './Pages/Contact';
-
 
 function App(){
    
 
-
-    return (
-      <div >
-      <Route path="/">
-      <Login/>
+  return (
+    <div >
+    <Route path="/">
+    <Login/>
+    </Route>
+    <Route path="/register">
+    <Register/>
       </Route>
-      <Route path="/register">
-      <Register/>
-        </Route>
       <Route path="/homepage">
         <HomePage/>
+     </Route>  
+     <Route path="/loan">
+        <Loan/>
      </Route>  
         <Route path="/Account">
         <Account/>
@@ -38,19 +43,31 @@ function App(){
         </Route> 
         <Route path="/CloseAccount">
         <CloseAccount/>
-        </Route>     
-        <Route path="/Bills">
-        <Bills/>
         </Route> 
-        <Route path="/LivingBills">
-        <LivingBills/>
-        </Route>    
-        <Route path="/CreditCardBills">
-        <CreditCardBills/>
+        <Route path="/CreditCard">
+        <CreditCard/>
+        </Route>
+        <Route path="/MyCredit">
+        <MyCredit/>
+        </Route>
+        <Route path="/ApplyCredit">
+        <ApplyCredit/>
+        </Route>
+        <Route path="/MyCredit">
+        <MyCredit/>
         </Route>    
         <Route path="/Contact">
         <Contact/>
-        </Route>    
+        </Route>     
+        <Route path="/Bills">
+        <Bills/>
+        </Route>
+        <Route path="/LivingBills">
+        <LivingBills/>
+        </Route> 
+        <Route path="/CreditCardBills">
+        <LivingBills/>
+        </Route>           
          
   </div>);
 }
