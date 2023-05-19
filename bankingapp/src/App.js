@@ -8,6 +8,8 @@ import OpenAccount from './Pages/OpenAccount';
 import CloseAccount from './Pages/CloseAccount';
 import Bills from './Pages/Bills';
 import LivingBills from './Pages/LivingBills';
+import CreditCardBills from './Pages/CreditCardBills';
+import Contact from './Pages/Contact';
 
 
 function App(){
@@ -42,6 +44,12 @@ function App(){
         </Route> 
         <Route path="/LivingBills">
         <LivingBills/>
+        </Route>    
+        <Route path="/CreditCardBills">
+        <CreditCardBills/>
+        </Route>    
+        <Route path="/Contact">
+        <Contact/>
         </Route>    
          
   </div>);

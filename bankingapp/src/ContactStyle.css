@@ -1,0 +1,31 @@
+.input-field {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f00;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #c00;
+  }
+  
+  .submit-icon {
+    margin-right: 8px;
+  }
+  

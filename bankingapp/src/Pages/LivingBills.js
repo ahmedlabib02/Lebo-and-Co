@@ -66,6 +66,7 @@ function LivingBills() {
             <option value="WaterBills">Water Bills</option>
             <option value="ElectricityBills">Electricity Bills</option>
             <option value="TelephoneBills">Telephone Bills</option>
+            <option value="GasBills">Gas Bills</option>
           </select>
         </label>
         <label className="block text-lg text-gray-700 mb-2">
