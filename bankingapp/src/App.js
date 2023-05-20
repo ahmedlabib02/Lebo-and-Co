@@ -10,7 +10,10 @@ import CloseAccount from './Pages/Account/CloseAccount';
 import CreditCard from './Pages/CreditCard/CreditCard';
 import ApplyCredit from './Pages/CreditCard/ApplyCredit';
 import MyCredit from './Pages/CreditCard/MyCredit';
-
+import Transfers from './Pages/Transfers/Transfers';
+import Domestic from './Pages/Transfers/Domestic';
+import Internal from './Pages/Transfers/Internal';
+import International from './Pages/Transfers/International';
 function App(){
    
 
@@ -51,7 +54,19 @@ function App(){
         </Route>
         <Route path="/MyCredit">
         <MyCredit/>
-        </Route>                 
+        </Route>  
+        <Route path="/Transfers">
+        <Transfers/>
+        </Route>   
+        <Route path="/Domestic">
+        <Domestic/>
+        </Route>
+        <Route path="/Internal">
+        <Internal/>
+        </Route>   
+        <Route path="/International">
+        <International/>
+        </Route>                  
          
   </div>);
 }
