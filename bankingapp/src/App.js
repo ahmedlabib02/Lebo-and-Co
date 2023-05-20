@@ -14,6 +14,11 @@ import Transfers from './Pages/Transfers/Transfers';
 import Domestic from './Pages/Transfers/Domestic';
 import Internal from './Pages/Transfers/Internal';
 import International from './Pages/Transfers/International';
+import Contact from './Pages/Contact';
+import Bills from './Pages/Bills';
+import LivingBills from './Pages/LivingBills';
+import CreditCardBills from './Pages/CreditCardBills';
+
 function App(){
    
 
@@ -66,7 +71,19 @@ function App(){
         </Route>   
         <Route path="/International">
         <International/>
-        </Route>                  
+        </Route>                     
+        <Route path="/Contact">
+        <Contact/>
+        </Route>     
+        <Route path="/Bills">
+        <Bills/>
+        </Route>
+        <Route path="/LivingBills">
+        <LivingBills/>
+        </Route> 
+        <Route path="/CreditCardBills">
+        <LivingBills/>
+        </Route>           
          
   </div>);
 }
