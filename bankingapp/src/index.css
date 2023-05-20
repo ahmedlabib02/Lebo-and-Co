@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 
+.text-gray-800 {
+    color: #2d3748;
+  }
+  

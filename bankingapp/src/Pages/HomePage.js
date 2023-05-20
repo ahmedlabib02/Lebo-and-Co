@@ -41,7 +41,7 @@ function HomePage() {
 
        
 
-          <div className="flex justify-center  bg-gray-800">
+          <div className="flex justify-center  bg-blue-950">
             <ButtonCard title="Account" icon={FaUser} onClick={handleAccountClick}homepage />
             <ButtonCard title="Loan" icon={FaMoneyBillWave} onClick={handleLoanClick}homepage />
             <ButtonCard title="Credit Card" icon={FaCreditCard} onClick={handleCreditClick}  homepage/>

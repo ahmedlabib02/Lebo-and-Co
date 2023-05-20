@@ -1,5 +1,7 @@
 import { FaSave } from 'react-icons/fa';
 import { useState } from "react";
+import MenuBar from '../../Components/MenuBar';
+import Footer from '../../Components/Footer';
 function ApplyCredit(){
     const [requirements, setRequirements] = useState({
         identification: '',
@@ -22,8 +24,9 @@ function ApplyCredit(){
 
 
 
-  return (
-    <div className="p-8 bg-white rounded-lg shadow-lg">
+  return (<div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen relative">
+  <MenuBar />
+  <div className="p-8 bg-white rounded-lg shadow-lg">
       <h2 className="text-3xl font-bold text-gray-800 mb-6">Account Opening Requirements</h2>
       <div>
         <label className="block text-lg text-gray-700 mb-2">
@@ -75,6 +78,9 @@ function ApplyCredit(){
         Save
       </button>
     </div>
+<Footer />
+</div>
+
   );
 }
 

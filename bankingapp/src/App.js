@@ -2,7 +2,7 @@ import Login from './Pages/Login';
 import Route from './Components/Route';
 import Register from './Pages/Register';
 import HomePage from './Pages/HomePage';
-import Loan from './Pages/Loan';
+import Loan from './Pages/Loan/Loan';
 import Account from './Pages/Account/Account';
 import AccountInfo from './Pages/Account/AccountInfo';
 import OpenAccount from './Pages/Account/OpenAccount';
@@ -10,6 +10,8 @@ import CloseAccount from './Pages/Account/CloseAccount';
 import CreditCard from './Pages/CreditCard/CreditCard';
 import ApplyCredit from './Pages/CreditCard/ApplyCredit';
 import MyCredit from './Pages/CreditCard/MyCredit';
+import LoanApplication from './Pages/Loan/LoanApplication';
+import MyLoans from './Pages/Loan/MyLoans';
 import Transfers from './Pages/Transfers/Transfers';
 import Domestic from './Pages/Transfers/Domestic';
 import Internal from './Pages/Transfers/Internal';
@@ -51,15 +53,18 @@ function App(){
         <Route path="/CreditCard">
         <CreditCard/>
         </Route>
-        <Route path="/MyCredit">
-        <MyCredit/>
-        </Route>
         <Route path="/ApplyCredit">
         <ApplyCredit/>
         </Route>
         <Route path="/MyCredit">
         <MyCredit/>
-        </Route>  
+        </Route>
+        <Route path="/loanapp">
+        <LoanApplication/>
+        </Route>    
+        <Route path="/myloans">
+        <MyLoans/>
+        </Route>                 
         <Route path="/Transfers">
         <Transfers/>
         </Route>   
@@ -72,7 +77,7 @@ function App(){
         <Route path="/International">
         <International/>
         </Route>                     
-        <Route path="/Contact">
+        <Route path="/contact">
         <Contact/>
         </Route>     
         <Route path="/Bills">
@@ -85,7 +90,8 @@ function App(){
         <LivingBills/>
         </Route>           
          
-  </div>);
+  </div>
+  );
 }
 
 export default App;

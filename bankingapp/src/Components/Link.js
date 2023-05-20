@@ -5,7 +5,7 @@ import useNavigation from '../hooks/use-navigation';
 function Link({to,children,className,activeClassName}){
 const {currentPath,navigate}= useNavigation();
 
-const classes = classNames('text-blue-500 underline italic',
+const classes = classNames('text-blue-500 hover:text-blue-500',
 className,
 currentPath===to&& activeClassName);
 

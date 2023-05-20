@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaWindowClose } from 'react-icons/fa';
+import MenuBar from '../../Components/MenuBar';
+import Footer from '../../Components/Footer';
 function CloseAccount(){
 
     const [requirements, setRequirements] = useState({
@@ -22,8 +24,11 @@ function CloseAccount(){
       };
     
       return (
-        <div className="p-8 bg-white rounded-lg shadow-lg">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Account Closure Requirements</h2>
+        <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen relative">
+      <MenuBar/>
+        
+  <div className="flex flex-col   mt-10 mb-24 p-8 bg-white rounded-lg shadow-lg">
+  <h2 className="text-3xl font-bold text-gray-800 mb-6">Account Closure Requirements</h2>
           <div>
             <label className="block text-lg text-gray-700 mb-2">
               Reason for account closure:
@@ -64,6 +69,12 @@ function CloseAccount(){
         Close Account
       </button>
         </div>
+  
+      <Footer/>
+    </div>
+        
+          
+       
       );
 }
 export default CloseAccount;

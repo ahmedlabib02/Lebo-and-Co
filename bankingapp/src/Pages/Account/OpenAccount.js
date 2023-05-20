@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaSave  } from 'react-icons/fa';
-
+import MenuBar from '../../Components/MenuBar';
+import Footer from '../../Components/Footer';
 function OpenAccount(){
 
 
@@ -20,8 +21,10 @@ function OpenAccount(){
       };
     
       return (
-        <div className="p-8 bg-white rounded-lg shadow-lg">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Account Opening Requirements</h2>
+        <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen relative">
+      <MenuBar/>
+        
+      <h2 className="text-3xl font-bold text-gray-800 mb-6">Account Opening Requirements</h2>
           <div>
             <label className="block text-lg text-gray-700 mb-2">
               Valid identification document:
@@ -69,9 +72,12 @@ function OpenAccount(){
         <FaSave className="mr-2" />
         Save
       </button>
+  
+      <Footer/>
+    </div>
+        
+         
 
-
-        </div>
       );
 }
 export default OpenAccount;

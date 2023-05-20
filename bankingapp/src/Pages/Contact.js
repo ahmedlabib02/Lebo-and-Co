@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import 'BankingAPP/src/ContactStyle.css';
 import { FaInfo, FaTimes, FaFolderOpen, FaCashRegister, FaFileInvoice, FaFileInvoiceDollar, FaCreditCard,FaAddressBook } from 'react-icons/fa';
 function Contact(){
 

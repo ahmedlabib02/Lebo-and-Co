@@ -13,7 +13,7 @@ function ImageSlider() {
       caption: 'First Slide',
       buttonLabel: 'Apply now',
       label: 'Buy now, pay later',
-      handleClick : ()=>{ navigate('/');
+      handleClick : ()=>{ navigate('/ApplyCredit');
     console.log("hey hey hey")}
     },
     {
@@ -21,14 +21,14 @@ function ImageSlider() {
       caption: 'Second Slide',
       buttonLabel: 'Open now',
       label: 'Your Financial Freedom Starts Here',
-      handleClick : ()=>{ navigate('/')}
+      handleClick : ()=>{ navigate('/OpenAccount')}
     },
     {
       image: VisitUsImage,
       caption: 'Third Slide',
       buttonLabel: 'Visit us',
       label: 'Banking made easy',
-      handleClick : ()=>{ navigate('/')}
+      handleClick : ()=>{ navigate('/about')}
     }
   ];
 
@@ -57,7 +57,7 @@ function ImageSlider() {
     padding: '20px'
   };
 
-  const buttonStyle = 'px-4 py-2 bg-gray-800 text-white rounded mb-4';
+  const buttonStyle = 'px-4 py-2 bg-blue-950 text-white rounded mb-4';
   const labelStyle = 'text-2xl font-bold';
 
   return (
