@@ -13,6 +13,9 @@ function Login() {
       navigate('/homepage');
       console.log("heyheyhey");
     }
+    else if(username === 'Admin' && password === '456'){
+      navigate('/AdminHomepage');
+    }
   };
 
  

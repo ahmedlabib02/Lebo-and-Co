@@ -19,6 +19,7 @@ function ApplyCredit(){
       };
     
       const handleSave = () => {
+        console.log("Save");
         // Handle save logic here
       };
 

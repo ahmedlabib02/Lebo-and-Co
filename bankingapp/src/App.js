@@ -20,7 +20,7 @@ import Contact from './Pages/Contact';
 import Bills from './Pages/Bills';
 import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
-import Payment from './Pages/PaymentStages/PaymentForm';
+import Payment from './Pages/PaymentStages/Payment';
 
 function App(){
    
@@ -35,10 +35,10 @@ function App(){
       </Route>
       <Route path="/homepage">
         <HomePage/>
-     </Route>  
-     <Route path="/loan">
+      </Route>  
+      <Route path="/loan">
         <Loan/>
-     </Route>  
+      </Route>  
         <Route path="/Account">
         <Account/>
         </Route>    
