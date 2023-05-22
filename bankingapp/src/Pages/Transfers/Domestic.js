@@ -1,78 +1,64 @@
-import { useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
- 
- 
- function Domestic(){
+import React from "react";
 
-    const [requirements, setRequirements] = useState({
-        Name:'',
-        Bank:'',
-        AccountNumber:'',
-        Amount:'',
-    });
 
-    const handleChange = (e) => {
-        const { name, value} = e.target;
-        setRequirements((prevRequirements) => ({
-            ...prevRequirements,
-            [name]: value,
-        }));
+
+function Domestic({dataEntry, setDataEntry, setPage}){
+
+    const handleName = (event) => {
+      setDataEntry({...dataEntry, Name: event.target.value})
     };
 
+    const handleAccountNumber = (event) => {
+      setDataEntry({...dataEntry, AccountNumber: event.target.value})
+    };
+
+    const handleBank = (event) => {
+      setDataEntry({...dataEntry, Bank: event.target.value})
+    }
+
+    
+
     return(
-        <div className="p-8 bg-white rounded-lg shadow-lg">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Domestic Transfer Requirements</h2>
-          <div>
-            <label className="block text-lg text-gray-700 mb-2">
-              Name:
-              <input
-                type="text"
-                name="Name"
-                value={requirements.Name}
-                onChange={handleChange}
-                className="block w-full rounded border border-gray-300 py-2 px-3 mt-1"
-              />
-            </label>
-            <label className="block text-lg text-gray-700 mb-2">
-              Bank:
-              <input
-                type="text"
-                name="Bank"
-                value={requirements.Bank}
-                onChange={handleChange}
-                className="block w-full rounded border border-gray-300 py-2 px-3 mt-1"
-              />
-            </label>
-            <label className="block text-lg text-gray-700 mb-2">
-            AccountNumber:
-            <input
-              type="number"
-              name="AccountNumber"
-              value={requirements.AccountNumber}
-              onChange={handleChange}
-              className="block w-full rounded border border-gray-300 py-2 px-3 mt-1"
-            />
-          </label>
-          <label className="block text-lg text-gray-700 mb-2">
-              Amount:
-              <input
-                type="number"
-                name="Amount"
-                value={requirements.Amount}
-                onChange={handleChange}
-                className="block w-full rounded border border-gray-300 py-2 px-3 mt-1"
-              />
-            </label>
-          </div>
-          <button
-        className="flex items-center justify-center bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-6" >
-        <FaArrowRight className="mr-2" />
-        Send
-      </button>
-
-
-        </div>
+      <div className="bg-white rounded-lg p-4">
+      <h2 className="text-2xl font-bold mb-4">Internal Transfer</h2>
+      <div className="flex flex-col mb-2">
+        <label className="mb-1">
+          Name:
+        </label>
+        <input
+          type="text"
+          id="Name"
+          value={dataEntry.Name}
+          onChange={handleName}
+          className="border border-gray-300 rounded-lg px-3 py-2"
+        />
+      </div>
+      <div className="flex flex-col mb-2">
+        <label className="mb-1">
+          Account Number:
+        </label>
+        <input
+          type="number"
+          id="AccountNumber"
+          value={dataEntry.AccountNumber}
+          onChange={handleAccountNumber}
+          className="border border-gray-300 rounded-lg px-3 py-2"
+        />
+      </div>
+      <div className="flex flex-col">
+        <label className="mb-1">
+          Bank:
+        </label>
+        <input
+          type="text"
+          id="Bank"
+          className="border border-gray-300 rounded-lg px-3 py-2"
+          value={dataEntry.Bank}
+          onChange={handleBank}
+        />
+      </div>
+    </div>
     );
 
- }
- export default Domestic;
+}
+export default Domestic;

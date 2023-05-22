@@ -1,36 +1,24 @@
-import ButtonCard from "../../Components/ButtonCard";
-import {FaGlobe, FaDollarSign, FaArrowDown } from 'react-icons/fa';
-import useNavigation from '../../hooks/use-navigation';
-import MenuBar from "../../Components/MenuBar";
-import Footer from "../../Components/Footer";
-function Transfers(){
-        const {navigate}= useNavigation();
-        
-        const handleInternalClick = ()=>{
-            navigate('/Internal');
-          }
-          const handleDomesticClick = ()=>{
-            navigate('/Domestic');
-          }
-          const handleInternationalClick = ()=>{
-            navigate('/International');
-          }
+import React from 'react';
+import Footer from '../../Components/Footer';
+import MenuBar from '../../Components/MenuBar';
+import NewTransferForm from './NewTransferForm.js';
 
-       return(
-        <div>
-        <MenuBar/>
-    <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen">
-          
-          <div className="flex justify-center mt-8">
-            <div className="grid grid-cols-3 gap-8 max-w-4xl">
-              <ButtonCard title="Internal Transfers" icon={FaDollarSign} onClick={handleInternalClick} />
-              <ButtonCard title="Domestic Transfers" icon={FaArrowDown} onClick={handleDomesticClick} />
-              <ButtonCard title="International Transfers" icon={FaGlobe} onClick={handleInternationalClick} />
-            </div>
+function Transfers() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <MenuBar />
+      <div className="flex-grow overflow-y-auto mb-20">
+        <div className="container mx-auto p-8 ">
+          <div className="max-w-xl mx-auto">
+            <NewTransferForm/>
           </div>
         </div>
-        <Footer/>
       </div>
-        );
+      <div className="mt-auto">
+        <Footer />
+      </div>
+    </div>
+  );
 }
+
 export default Transfers;

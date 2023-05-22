@@ -35,10 +35,10 @@ function App(){
       </Route>
       <Route path="/homepage">
         <HomePage/>
-      </Route>  
-      <Route path="/loan">
-        <Loan/>
-      </Route>  
+     </Route>  
+     <Route path="/loan">
+      <Loan/>
+     </Route>   
         <Route path="/Account">
         <Account/>
         </Route>    
