@@ -21,7 +21,7 @@ import Bills from './Pages/Bills';
 import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
-
+import ModalPage from './Pages/ModalPage';
 function App(){
    
 
@@ -92,7 +92,10 @@ function App(){
         </Route>
         <Route path='/payment'>
           <Payment/>
-          </Route>           
+          </Route>   
+        <Route path='/modal'>
+        <ModalPage/>
+        </Route>              
          
   </div>
   );
