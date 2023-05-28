@@ -21,6 +21,10 @@ import Bills from './Pages/Bill/Bills';
 import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
+import CreditPoints from './Pages/CreditCard/CreditPoints';
+import TechnicalIssueTable from './Components/TechnicalIssueTable';
+import AdminHomePage from './Admin/AdminHomePage';
+import Reports from './Admin/Reports/Reports';
 import ModalPage from './Pages/ModalPage';
 
 
@@ -94,7 +98,17 @@ function App(){
         </Route>
         <Route path='/payment'>
           <Payment/>
-        </Route>   
+          </Route> 
+          <Route path='/AdminHomePage'>
+          <AdminHomePage/>
+          </Route> 
+          <Route path='/Reports'>
+          <Reports/>
+          </Route> 
+          
+                    
+         
+      
   </div>
   );
 }

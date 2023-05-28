@@ -1,5 +1,5 @@
 
-import TechnicalIssueTable from "../../Components/ TechnicalIssueTable";
+import TechnicalIssueTable from "../../Components/TechnicalIssueTable";
 import MenuBar from "../../Components/MenuBar";
 
 function Reports(){
