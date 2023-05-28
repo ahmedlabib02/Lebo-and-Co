@@ -27,7 +27,7 @@ function AdminHomePage() {
         <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen flex flex-col">
         <MenuBar />
   
-  <div className="flex flex-1 flex-col items-center justify-center">
+        <div className="flex flex-1 flex-col items-center justify-center">
     
        
       
