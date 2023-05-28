@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PersonalInfo({ formData, setFormData }) {
+function PersonalLoanInfo({ formData, setFormData }) {
   const handlePurposeChange = (event) => {
     setFormData({ ...formData, purpose: event.target.value });
   };
@@ -41,4 +41,4 @@ function PersonalInfo({ formData, setFormData }) {
   );
 }
 
-export default PersonalInfo;
+export default PersonalLoanInfo;

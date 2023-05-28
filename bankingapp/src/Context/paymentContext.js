@@ -1,17 +1,14 @@
 import { createContext,useState } from "react";
-import useNavigation from "../hooks/use-navigation";
 
 const PaymentContext = createContext();
 
 function PaymentProvider({children}){
-    const {navigate} = useNavigation();
+    
     const [paymentInfo,setPaymentInfo]= useState({amount:0,billtype:'utility'});
-    const navigateToPayment =(info)=>{
-            setPaymentInfo(info);
-            navigate('/payment');
-    }
+    
+    
 
-    return <PaymentContext.Provider value={{navigateToPayment,paymentInfo}}>
+    return <PaymentContext.Provider value={{setPaymentInfo,paymentInfo}}>
     {children}
 </PaymentContext.Provider>
 }

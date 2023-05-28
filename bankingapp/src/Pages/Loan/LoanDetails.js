@@ -1,6 +1,13 @@
+import PaymentContext from "../../Context/paymentContext";
+import { useContext } from "react";
+import useNavigation from "../../hooks/use-navigation";
+
 function LoanDetails({ loan }) {
+  const {navigate}= useNavigation();
+  const {setPaymentInfo,paymentInfo} = useContext(PaymentContext);
   const handlePayInstallment = () => {
-    // Logic to handle paying installment
+    setPaymentInfo({amount:loan.amount,typeofbill:"loan"})
+    navigate('/payment');
   };
 
   return (
@@ -13,8 +20,7 @@ function LoanDetails({ loan }) {
       <p className="text-lg mb-2">Remaining Balance: {loan.remainingBalance}</p>
       <button
         className="bg-blue-950 text-white text-lg px-4 py-2 mt-4 rounded-lg"
-        onClick= {handlePayInstallment}
-      >
+        onClick= {handlePayInstallment}>
         Pay Installment
       </button>
     </div>

@@ -6,30 +6,36 @@ import CreditCardDetails from "./CreditCardDetails";
 
 function MyCredit() {
   const [selectedCreditCardId, setSelectedCreditCardId] = useState(null);
-
-  // Dummy data 
+  const handleCreditCardClick = (CreditCardId) => {
+    setSelectedCreditCardId(CreditCardId);
+    console.log(selectedCreditCard);
+  };
   const creditCards = [
    { id: 1,
-    cardNumber: "**** **** **** 1234",
+    number: "1234 1234 1234 3455",
     remainingCredit: "$1000",
     creditLimit: "$5000",
-    issuanceDate:"4/4/2010",
+    expiry:"12/2027",
+    name:'Ahmed Labib',
+    cvc:'321',
+    issuer:'visa',
     branch: "Main Street Branch",
-    points:"5000"
-
-   
-   
+    points:5000,
     
+     
   },
   {
     id: 2,
-    cardNumber: "**** **** **** 1234",
+    number: "1234 1234 1234 1234",
     remainingCredit: "$1000",
     creditLimit: "$9000",
-    issuanceDate:"4/4/2012",
+    expiry:"04/2026",
+    name:'Ahmed Labib',
+    cvc:'123',
+    issuer : 'maestro',
     branch: "Main Street Branch",
-    points:"1000"
-
+    points:1000,
+    
   
     
   },
@@ -37,9 +43,7 @@ function MyCredit() {
    
   ];
 
-  const handleCreditCardClick = (CreditCardId) => {
-    setSelectedCreditCardId(CreditCardId);
-  };
+ 
 
   const selectedCreditCard = creditCards.find((creditCard) => creditCard.id === selectedCreditCardId);
 
@@ -52,11 +56,10 @@ function MyCredit() {
         ) : (
           <>
             <h2 className="text-2xl font-bold mb-4">My Credit Cards</h2>
-            <h3 className="text-lg font-semibold mb-2">Select one to view:</h3>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {/* Render CreditCard components */}
+            <h3 className="text-lg font-semibold mb-12">Select one to view:</h3>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
               {creditCards.map((creditCard) => (
-                <CreditCardCard key={creditCard.id} creditCard={creditCard} onCreditCardClick={handleCreditCardClick} />
+                <CreditCardCard creditCard={creditCard} handleClick={handleCreditCardClick} />
               ))}
             </div>
           </>

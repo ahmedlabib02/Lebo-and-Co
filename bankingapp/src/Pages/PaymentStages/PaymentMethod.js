@@ -1,55 +1,50 @@
 import ButtonCard from "../../Components/ButtonCard";
-import { FaCreditCard, FaMoneyBillAlt, FaBuilding, FaHandHoldingUsd,FaExchangeAlt } from "react-icons/fa";
+import { FaCreditCard,  FaExchangeAlt } from "react-icons/fa";
 
-function PaymentMethod({paymentInfo,paymentMethod,setPaymentMethod,setPage}){
-    const isUtilityBill = paymentInfo.typeofbill === "utility";
-    const isCreditCardOrLoanBill = paymentInfo.typeofbill === "credit card" || paymentInfo.typeofbill === "loan";
+function PaymentMethod({paymentInfo,formData,setFormData,setPage}){
+    const isUtilityBill = paymentInfo.billtype === "Utility";
+    const isCreditCardOrLoanBill = paymentInfo.billtype === "Credit card" || paymentInfo.billtype === "Loan";
     const handlePaymentMethodClick = (method)=>{
-        setPaymentMethod(method);
+        setFormData({...formData, paymentMethod:method});
         setPage(1);
     }
-return (<div>
-    <h2>Payment</h2>
-    <div>Payment Info:</div>
-    <div>Amount: {paymentInfo.amount}</div>
-    <div>Type of Bill: {paymentInfo.typeofbill}</div>
-
-    <h3>Select Payment Method:</h3>
-    <div className="flex space-x-8">
-      {isUtilityBill && (
-        <>
-          <ButtonCard
-            title="Credit Card"
-            icon={FaCreditCard}
-            onClick={() => handlePaymentMethodClick("credit-card")}
-          />
-          <ButtonCard
-            title="Account Transfer"
-            icon={FaExchangeAlt}
-            onClick={() => handlePaymentMethodClick("account-transfer")}
-          />
-          <ButtonCard
-            title="Third-Party Application"
-            icon={FaBuilding}
-            onClick={() => handlePaymentMethodClick("third-party")}
-            
-          />
-        </>
-      )}
-
-      {isCreditCardOrLoanBill && (
-        <>
-          <ButtonCard
-            title="Account Transfer"
-            icon={FaExchangeAlt}
-            onClick={() => handlePaymentMethodClick("account-transfer")}
-            homepage={paymentMethod === "account-transfer"}
-          />
-        </>
-      )}
-    </div>
-
-  </div>)
+    return (
+      <div>
+        <div className="bg-blue-900 text-white p-4 rounded-lg">
+          <div className="text-3xl font-bold mb-4">Payment Info:</div>
+          <div className="mb-1">Amount: {paymentInfo.amount}</div>
+          <div className="mb-1">Type of Bill: {paymentInfo.billtype}</div>
+        </div>
+  
+        <h3 className="text-2xl font-bold mb-8">Select Payment Method:</h3>
+        <div className="flex justify-center space-x-8">
+          {isUtilityBill && (
+            <>
+              <ButtonCard
+                title="Credit Card"
+                icon={FaCreditCard}
+                onClick={() => handlePaymentMethodClick("credit-card")}
+              />
+              <ButtonCard
+                title="Account Transfer"
+                icon={FaExchangeAlt}
+                onClick={() => handlePaymentMethodClick("account-transfer")}
+              />
+            </>
+          )}
+  
+          {isCreditCardOrLoanBill && (
+            <>
+              <ButtonCard
+                title="Account Transfer"
+                icon={FaExchangeAlt}
+                onClick={() => handlePaymentMethodClick("account-transfer")}
+              />
+            </>
+          )}
+        </div>
+      </div>
+    );
 }
 
 export default PaymentMethod;

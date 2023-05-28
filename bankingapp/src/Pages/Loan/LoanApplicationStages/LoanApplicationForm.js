@@ -3,7 +3,7 @@ import { MdNavigateBefore, MdNavigateNext, MdDone } from "react-icons/md";
 import { FaFileAlt, FaCar, FaUser } from "react-icons/fa";
 import LoanType from "./LoanType";
 import CarInfo from "./CarInfo";
-import PersonalInfo from "./PersonalInfo";
+import PersonalInfo from "./PersonalLoanInfo";
 import DocumentInfo from "./DocumentsInfo";
 
 function LoanApplicationForm() {
@@ -57,6 +57,7 @@ function LoanApplicationForm() {
   };
 
   const handlePrevClick = () => {
+
     if (page === 1 && formData.loanType === "Car") {
       setFormData((prevFormData) => ({
         ...prevFormData,
@@ -72,7 +73,7 @@ function LoanApplicationForm() {
         loanAmount: ""
       }));
     }
-    console.log(formData.documents.length);
+
     setPage((currPage) => currPage - 1);
   };
 

@@ -115,62 +115,60 @@ const handleNextClick = () => {
     setPage((currPage) => currPage - 1);
   };
  
-  return( <div className="container mx-auto p-8">
-  <div className="flex items-center justify-between mb-8">
-    {FormTitles.map((title, index) => (
-      <div key={index} className="flex items-center">
-        <div
-          className={`h-8 w-8 flex items-center justify-center rounded-full ${
-            page === index ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-600"
-          }`}
-        >
-          {FormIcons[index]}
+  return( 
+    <div >
+      <div className="flex items-center justify-between mb-8 "  style={{ marginRight: "-24px" }}>
+        {FormTitles.map((title, index) => (
+          <div key={index} className="flex items-center">
+            <div
+              className={`h-8 w-8 flex items-center justify-center rounded-full ${
+                page === index ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-600"
+              }`}
+            >
+              {FormIcons[index]}
+            </div>
+            {index !== FormTitles.length - 1 && <div className="h-px bg-gray-300 w-12 mx-2"></div>}
+            <span className={`${page === index ? "font-bold" : ""}`}>{title}</span>
+          </div>
+        ))}
+      </div>
+      <div className="bg-white rounded-lg p-8 w-full ml-12">
+        <div className="mb-8 ">
+          <h1 className="text-3xl font-bold mb-4">{FormTitles[page]}</h1>
+          {PageDisplay()}
         </div>
-        {index !== FormTitles.length - 1 && <div className="h-px bg-gray-300 w-12 mx-2"></div>}
-        <span className={`${page === index ? "font-bold" : ""}`}>{title}</span>
+        {page !== 0 && (
+          <div className="flex justify-between">
+            <button
+              disabled={page === 0}
+              onClick={handlePrevClick}
+              className="flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold bg-blue-500 hover:bg-blue-600"
+            >
+              <MdNavigateBefore className="mr-2" />
+              Prev
+            </button>
+            <button
+              onClick={handleNextClick}
+              className={`flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold ${
+                isValidForm() ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-400 cursor-not-allowed"
+              }`}
+              disabled={!isValidForm()}
+            >
+              {page === FormTitles.length - 1 ? (
+                <>
+                  Submit <MdDone className="ml-2" />
+                </>
+              ) : (
+                <>
+                  Next <MdNavigateNext className="ml-2" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
-    ))}
-  </div>
-  <div className="bg-white rounded-lg p-8">
-    <div className="mb-8">
-      <h1 className="text-3xl font-bold mb-4">{FormTitles[page]}</h1>
-      <div className="">{PageDisplay()}</div>
     </div>
-    {page !== 0 && (
-      <div className="flex justify-between">
-        <button
-          disabled={page === 0}
-          onClick={handlePrevClick}
-          className="flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold bg-blue-500 hover:bg-blue-600"
-        >
-          <MdNavigateBefore className="mr-2" />
-          Prev
-        </button>
-        <button
-          onClick={handleNextClick}
-          className={`flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold ${
-            isValidForm() ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-400 cursor-not-allowed"
-          }`}
-          disabled={!isValidForm()}
-        >
-          {page === FormTitles.length - 1 ? (
-            <>
-              Submit <MdDone className="ml-2" />
-            </>
-          ) : (
-            <>
-              Next <MdNavigateNext className="ml-2" />
-            </>
-          )}
-        </button>
-      </div>
-    )}
-  </div>
-</div>
-
   );
-
-
 }
 
 export default NewTransferForm;
