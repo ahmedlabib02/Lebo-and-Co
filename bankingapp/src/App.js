@@ -22,6 +22,11 @@ import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
 import ModalPage from './Pages/ModalPage';
+import Terms from './Pages/Terms';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import About from './Pages/About';
+import Profile from './Pages/Profile';
+
 function App(){
    
 
@@ -95,8 +100,20 @@ function App(){
           </Route>   
         <Route path='/modal'>
         <ModalPage/>
-        </Route>              
-         
+        </Route> 
+        <Route path='/terms'>
+        <Terms/>
+        </Route> 
+        <Route path='/privacy'>
+        <PrivacyPolicy/>
+        </Route> 
+        <Route path='/about'>
+        <About/>
+        </Route> 
+        <Route path='/profile'>
+        <Profile/>
+        </Route> 
+     
   </div>
   );
 }
