@@ -8,10 +8,9 @@ function Transfers() {
     <div className="flex flex-col min-h-screen">
       <MenuBar />
       <div className="flex-grow overflow-y-auto mb-20">
-        <div className="container mx-auto p-8 ">
-          <div className="max-w-xl mx-auto">
+        
+          <div className="max-w-xl mx-auto container mx-auto p-8 max-w-screen-lg">
             <NewTransferForm/>
-          </div>
         </div>
       </div>
       <div className="mt-auto">

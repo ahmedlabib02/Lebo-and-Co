@@ -22,6 +22,8 @@ import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
 import ModalPage from './Pages/ModalPage';
+
+
 function App(){
    
 
@@ -92,15 +94,7 @@ function App(){
         </Route>
         <Route path='/payment'>
           <Payment/>
-<<<<<<< HEAD
-          </Route>             
-=======
-          </Route>   
-        <Route path='/modal'>
-        <ModalPage/>
-        </Route>              
->>>>>>> a508030cdb911e3bb856e45dcc6efa3272de4063
-         
+        </Route>   
   </div>
   );
 }

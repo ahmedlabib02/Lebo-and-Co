@@ -20,6 +20,7 @@
     background-color: white;
     padding: 20px;
     width: 300px;
+    z-index:9999;
   }
   
   .modal-overlay {
@@ -32,6 +33,21 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 
+  .pagination-toolbar,
+.pagination-select,
+.pagination-select-label,
+.pagination-select-icon,
+.pagination-input,
+.pagination-menu-item {
+  @apply text-white;
+}
+.table-container .MuiTablePagination-root {
+  background-color: #1a202c;
+}
+
+.pagination-button {
+  color: white;
+}
   
   
   

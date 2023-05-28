@@ -26,9 +26,7 @@ function HomePage() {
     navigate('/Bills');
   };
 
-  const handleTransferClick = () => {
-    navigate('/Transfers');
-  };
+  
 
   return (
     <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen flex flex-col">
@@ -45,9 +43,7 @@ function HomePage() {
             <ButtonCard title="Account" icon={FaUser} onClick={handleAccountClick}homepage />
             <ButtonCard title="Loan" icon={FaMoneyBillWave} onClick={handleLoanClick}homepage />
             <ButtonCard title="Credit Card" icon={FaCreditCard} onClick={handleCreditClick}  homepage/>
-            <ButtonCard title="Bills" icon={FaFileInvoiceDollar} onClick={handleBillsClick}homepage />
-            <ButtonCard title="Transfers" icon={FaExchangeAlt} onClick={handleTransferClick}homepage />
-          </div>
+            <ButtonCard title="Bills" icon={FaFileInvoiceDollar} onClick={handleBillsClick}homepage /> </div>
         </div>
       </div>
 

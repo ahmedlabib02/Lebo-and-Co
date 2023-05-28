@@ -4,6 +4,7 @@ import MenuBar from "../../Components/MenuBar";
 import Footer from "../../Components/Footer";
 import { AiOutlineFolderOpen ,AiOutlineCloseCircle} from 'react-icons/ai';
 import { CiViewList } from 'react-icons/ci';
+import {FaExchangeAlt } from 'react-icons/fa';
 function Account(){
     const {navigate}= useNavigation();
     const handleInfoClick = ()=>{
@@ -12,10 +13,12 @@ function Account(){
       const handleOpenClick = ()=>{
         navigate('/OpenAccount');
       }
-      const handleCloseClick = ()=>{
-        navigate('/CloseAccount');
-      }
-    
+      
+      
+      const handleTransferClick = () => {
+        navigate('/Transfers');
+      };
+   
     
     return (<div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen relative">
       <MenuBar/>
@@ -25,7 +28,7 @@ function Account(){
        <div className="flex col-2">
             <ButtonCard title="View Account" icon={AiOutlineFolderOpen} onClick={handleInfoClick} />
             <ButtonCard title="Open Account" icon={CiViewList} onClick={handleOpenClick} />
-            <ButtonCard title="Close Account" icon={AiOutlineCloseCircle} onClick={handleCloseClick} />
+            <ButtonCard title="Transfers" icon={FaExchangeAlt} onClick={handleTransferClick} />
           </div>
         </div>
   

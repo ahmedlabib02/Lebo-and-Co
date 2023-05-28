@@ -22,7 +22,7 @@ function Bills() {
         <h3 className="text-lg font-semibold mb-2">Select one to pay or set a reminder for:</h3>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {bills.map((bill) => (
-            <div key={bill.accountNumber}  className="flex justify-center">
+            <div key={bill.accountNumber} >
               <BillCard bill={bill} />
             </div>
           ))}
