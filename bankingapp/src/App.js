@@ -1,6 +1,6 @@
 import Login from './Pages/Login';
 import Route from './Components/Route';
-import Register from './Pages/Register';
+import Register from './Pages/Register/Register';
 import HomePage from './Pages/HomePage';
 import Loan from './Pages/Loan/Loan';
 import Account from './Pages/Account/Account';
@@ -17,7 +17,7 @@ import Domestic from './Pages/Transfers/Domestic';
 import Internal from './Pages/Transfers/Internal';
 import International from './Pages/Transfers/International';
 import Contact from './Pages/Contact';
-import Bills from './Pages/Bills';
+import Bills from './Pages/Bill/Bills';
 import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
@@ -34,18 +34,18 @@ function App(){
     <Register/>
       </Route>
       <Route path="/homepage">
-        <HomePage/>
+      <HomePage/>
      </Route>  
      <Route path="/loan">
       <Loan/>
      </Route>   
-        <Route path="/Account">
-        <Account/>
-        </Route>    
-        <Route path="/AccountInfo">
-        <AccountInfo/>
-        </Route> 
-        <Route path="/OpenAccount">
+      <Route path="/Account">
+      <Account/>
+      </Route>    
+      <Route path="/AccountInfo">
+      <AccountInfo/>
+      </Route> 
+      <Route path="/OpenAccount">
         <OpenAccount/>
         </Route> 
         <Route path="/CloseAccount">
@@ -92,10 +92,14 @@ function App(){
         </Route>
         <Route path='/payment'>
           <Payment/>
+<<<<<<< HEAD
+          </Route>             
+=======
           </Route>   
         <Route path='/modal'>
         <ModalPage/>
         </Route>              
+>>>>>>> a508030cdb911e3bb856e45dcc6efa3272de4063
          
   </div>
   );

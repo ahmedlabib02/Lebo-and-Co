@@ -1,99 +1,79 @@
-import { useContext, useState } from "react";
-import PaymentContext from "../../Context/paymentContext";
-import ButtonCard from "../../Components/ButtonCard";
+import { useState } from "react";
 import PaymentMethod from "./PaymentMethod";
 import { MdNavigateBefore, MdNavigateNext, MdDone } from "react-icons/md";
 import { FaFileAlt, FaCar, FaUser } from "react-icons/fa";
+import CreditCardMethod from "./CreditCardMethod";
+import TransferMethod from "./TransferMethod";
+import OTPandConfirmation from "./OTPandConfirmation";
 
 
 function PaymentForm({paymentInfo}) {
-  //const { paymentInfo } = useContext(PaymentContext);
-  const [paymentMethod, setPaymentMethod] = useState('');
-
-  const handlePaymentMethodChange = (selectedMethod) => {
-    setPaymentMethod(selectedMethod);
-  };
-
-  const handleNextStage = () => {
-    // Perform any necessary validation or actions before proceeding to the next stage
-    // You can update the payment context or perform other logic here if needed
-    // For simplicity, this example just logs the chosen payment method
-    console.log("Chosen payment method:", paymentMethod);
-    // Navigate to the next stage or perform any other actions
-  };
-
-  const isUtilityBill = paymentInfo.typeofbill === "utility";
-  const isCreditCardOrLoanBill = paymentInfo.typeofbill === "credit card" || paymentInfo.typeofbill === "loan";
-
-
-
-
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    paymentMethod: ""
+    paymentMethod: "",holderName:"",cardNumber:"",cvv:"",expiryMonth:"", expiryYear:"",otp:""
   });
-
-  const FormTitles = ["Payment method", "Loan Information", "Your Documents"];
+  var Method = (formData.paymentMethod==='account-transfer')?('Account Transfer Details'):('Credit Card Information');
+  const FormTitles = ["Payment method",Method, "Confirmation"];
   const FormIcons = [<FaFileAlt />, <FaCar />, <FaUser />];
 
   const isValidForm = () => {
-    
-    if (page === 1) {
-      if (formData.loanType === "Car") {
-        return (
-          formData.carModel !== "" &&
-          formData.carMake !== "" &&
-          formData.loanAmount !== ""
-        );
-      } else if (formData.loanType === "Personal") {
-        return formData.purpose !== "" && formData.loanAmount !== "";
-      }
-    } else if (page === 2) {
-      return formData.documents.length > 0 && formData.agreeTerms;
+    if(page===1 && formData.paymentMethod==='credit-card'){
+      return formData.holderName!==""&&formData.cardNumber!==""&&formData.cvv!=="" && formData.expirydate!=="";
     }
-    return true; // No validation for other pages
+    else if(page===1 && formData.paymentMethod==='account-transfer'){
+      return true;
+    }
+    else if(page===2){
+      return formData.otp.length===6;
+    }
+    return true; 
   };
   
   
   
 
   const handleNextClick = () => {
-    if (isValidForm()) {
-      if (page === 2) {
-        
-      } else {
+        if(page!==2)  
         setPage((currPage) => currPage + 1);
-      }
-    } else {
-      alert("Please fill in all the required fields.");
-    }
   };
 
   const handlePrevClick = () => {
-    if (page === 1 && formData.loanType === "Car") {
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        carModel: "",
-        carMake: "",
-        purpose: "",
-        loanAmount: ""
-      }));
-    } else if (page === 1 && formData.loanType === "Personal") {
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        purpose: "",
-        loanAmount: ""
-      }));
+
+    if (formData.paymentMethod === "credit-card" && page === 1 ) {
+      setFormData({
+        ...formData,
+        holderName: "",
+        cardNumber: "",
+        cvv: "",
+        expiryMonth: "" , 
+        expiryYear:""
+      });
+     
+    } 
+    else if(page===2){
+        setFormData({
+          ...formData,otp:""
+        })
     }
-    console.log(formData.documents.length);
+    
     setPage((currPage) => currPage - 1);
   };
 
   const PageDisplay = () => {
     if (page === 0) {
-      return <PaymentMethod setPage={setPage} paymentInfo={paymentInfo} setPaymentMethod={setPaymentMethod
-      } />
+      return <PaymentMethod setPage={setPage} paymentInfo={paymentInfo} 
+      formData={formData} setFormData={setFormData} />;}
+    else if(page===1 && formData.paymentMethod==='credit-card'){
+      return <CreditCardMethod amount={paymentInfo.amount} formData={formData} setFormData={setFormData}/> 
+    }  
+    else if (page ===1 && formData.paymentMethod==='account-transfer'){
+      return <TransferMethod amount={paymentInfo.amount} formData={formData} setFormData={setFormData}/>
     } 
+    else if(page===2){
+      return <OTPandConfirmation formData={formData} setFormData={setFormData}/>
+    }
+    
+     
   };
 
   return (

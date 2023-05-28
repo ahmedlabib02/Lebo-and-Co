@@ -37,8 +37,7 @@ function MyLoans() {
     term: "24 months",
     remainingBalance: "$5,000",
     // Add more details about the loan
-  },
-    // Rest of the loans...
+  }
   ];
 
   const handleLoanClick = (loanId) => {
@@ -58,7 +57,6 @@ function MyLoans() {
             <h2 className="text-2xl font-bold mb-4">My Loans</h2>
             <h3 className="text-lg font-semibold mb-2">Select one to view:</h3>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {/* Render LoanCard components */}
               {loans.map((loan) => (
                 <LoanCard key={loan.id} loan={loan} onLoanClick={handleLoanClick} />
               ))}

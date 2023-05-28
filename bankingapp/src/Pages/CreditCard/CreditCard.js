@@ -24,8 +24,9 @@ function CreditCard() {
       <div className="flex flex-col min-h-screen">
         <MenuBar />
 
-        <div className="flex justify-center mt-24 mb-52">
-          <div className="grid grid-cols-3 gap-8 max-w-4xl">
+        <div className="flex flex-col items-center justify-center mt-10 mb-48">
+      <p className="text-lg font-semibold mt-4 mb-8">What would you like to do?</p>
+       <div className="flex col-2">
             <ButtonCard
               title="My Credit Card"
               icon={FaCreditCard}
@@ -35,11 +36,6 @@ function CreditCard() {
               title="Apply for Credit Card"
               icon={FaClipboardCheck}
               onClick={handleApplyForCreditCardClick}
-            />
-            <ButtonCard
-              title="Credit Points"
-              icon={FaStar}
-              onClick={handleCreditPointsClick}
             />
           </div>
         </div>
