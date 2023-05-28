@@ -1,6 +1,6 @@
 
 import TechnicalIssueTable from "../../Components/TechnicalIssueTable";
-import MenuBar from "../../Components/MenuBar";
+import AdminMenuBar from "../AdminMenuBar";
 
 function Reports(){
 
@@ -9,7 +9,7 @@ function Reports(){
         
     
         <div>
-            <MenuBar />
+            <AdminMenuBar />
             <TechnicalIssueTable/>
 
         </div>

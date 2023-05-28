@@ -26,7 +26,8 @@ import TechnicalIssueTable from './Components/TechnicalIssueTable';
 import AdminHomePage from './Admin/AdminHomePage';
 import Reports from './Admin/Reports/Reports';
 import ModalPage from './Pages/ModalPage';
-
+import ManageAccounts from './Admin/ManageAccounts/ManageAccounts';
+import CreateBanker from './Admin/CreateBanker';
 
 function App(){
    
@@ -104,6 +105,12 @@ function App(){
           </Route> 
           <Route path='/Reports'>
           <Reports/>
+          </Route> 
+          <Route path='/ManageAccounts'>
+          <ManageAccounts/>
+          </Route> 
+          <Route path='/CreateBanker'>
+          <CreateBanker/>
           </Route> 
           
                     
