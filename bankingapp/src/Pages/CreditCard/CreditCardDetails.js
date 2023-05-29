@@ -10,10 +10,11 @@ import Modal from 'react-modal';
 
 
 function CreditCardDetails({ creditCard }) {
+
   const { navigate } = useNavigation();
   const { setPaymentInfo } = useContext(PaymentContext);
   const [focus, setFocus] = useState('name');
-  const [isModalOpen,setIsModalOpen]= useState(true);
+  const [isModalOpen,setIsModalOpen]= useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [barValue,setBarValue]= useState(Math.round(((creditCard.points / 8000) * 100)));
   const columns = [
@@ -216,7 +217,7 @@ function CreditCardDetails({ creditCard }) {
                   Pay Remaining Credit
                 </button>
                 <button className="bg-red-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleReportProblem}>
-                    Report stolen
+                    Report problem
                 </button>
               </div>
             </div>
@@ -244,7 +245,7 @@ function CreditCardDetails({ creditCard }) {
         setIsModalOpen(false);
       }}
     >
-      X
+      
     </button>
   </div>
   <div className="p-4">

@@ -21,8 +21,17 @@ import Bills from './Pages/Bill/Bills';
 import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
+import CreditPoints from './Pages/CreditCard/CreditPoints';
+import TechnicalIssueTable from './Components/TechnicalIssueTable';
+import AdminHomePage from './Admin/AdminHomePage';
+import Reports from './Admin/Reports/Reports';
 import ModalPage from './Pages/ModalPage';
-
+import Terms from './Pages/Terms';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import About from './Pages/About';
+import Profile from './Pages/Profile';
+import ManageAccounts from './Admin/ManageAccounts/ManageAccounts';
+import CreateBanker from './Admin/CreateBanker';
 
 function App(){
    
@@ -94,7 +103,40 @@ function App(){
         </Route>
         <Route path='/payment'>
           <Payment/>
-        </Route>   
+          </Route>   
+        <Route path='/modal'>
+        <ModalPage/>
+        </Route> 
+        <Route path='/terms'>
+        <Terms/>
+        </Route> 
+        <Route path='/privacy'>
+        <PrivacyPolicy/>
+        </Route> 
+        <Route path='/about'>
+        <About/>
+        </Route> 
+        <Route path='/profile'>
+        <Profile/>
+        </Route> 
+     
+          
+          <Route path='/AdminHomePage'>
+          <AdminHomePage/>
+          </Route> 
+          <Route path='/Reports'>
+          <Reports/>
+          </Route> 
+          <Route path='/ManageAccounts'>
+          <ManageAccounts/>
+          </Route> 
+          <Route path='/CreateBanker'>
+          <CreateBanker/>
+          </Route> 
+          
+                    
+         
+      
   </div>
   );
 }

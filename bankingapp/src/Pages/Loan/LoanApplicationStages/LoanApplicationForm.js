@@ -57,6 +57,7 @@ function LoanApplicationForm() {
   };
 
   const handlePrevClick = () => {
+
     if (page === 1 && formData.loanType === "Car") {
       setFormData((prevFormData) => ({
         ...prevFormData,
