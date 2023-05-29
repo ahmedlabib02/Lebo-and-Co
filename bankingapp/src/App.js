@@ -45,8 +45,10 @@ import BankerReports from './Pages/Banker/BankerReports';
 import BlindHomepage from './BlindClient/Homepage';
 import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
 import BlindAccount from './BlindClient/BlindAccount';
+import BlindNotification from './BlindClient/BlindNotification';
 
 import CreateAnnouncement from './Admin/CreateAnnouncment';
+
 
 function App(){
    
@@ -195,6 +197,9 @@ function App(){
           </Route>
           <Route path='/blindaccount'>
             <BlindAccount/>
+          </Route>
+          <Route path='/blindnotification'>
+            <BlindNotification/>
           </Route>
           
                     

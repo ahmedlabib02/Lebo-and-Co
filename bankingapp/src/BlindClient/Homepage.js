@@ -76,7 +76,7 @@ const Homepage = () => {
           Bills
         </button>
         <button
-          onClick={() => handleNavigation('notifications')}
+          onClick={() => handleNavigation('notification')}
           onFocus={() => speak('You are now on Notifications button')}
           className="text-4xl bg-white text-black px-8 py-4 rounded"
         >

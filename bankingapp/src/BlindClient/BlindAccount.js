@@ -89,6 +89,7 @@ const BlindAccount = () => {
         {flag === 'view' && <AccountDetails account={accountDetails} />}
         {flag === 'open' && <OpenBlindAccount />}
         {flag === 'transfers' && <BlindTransfers />}
+        
       </div>
     </div>
   );
