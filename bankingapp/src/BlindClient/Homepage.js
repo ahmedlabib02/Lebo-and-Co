@@ -62,7 +62,7 @@ const Homepage = () => {
           Credit Card
         </button>
         <button
-          onClick={() => handleNavigation('bank account')}
+          onClick={() => handleNavigation('account')}
           onFocus={() => speak('You are now on Bank Account button')}
           className="text-4xl bg-white text-black px-8 py-4 rounded"
         >

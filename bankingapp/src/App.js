@@ -40,7 +40,7 @@ import Bankerprofile from './Pages/Banker/Bankerprofile';
 import Adminprofile from './Admin/Adminprofile';
 import BlindHomepage from './BlindClient/Homepage';
 import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
-
+import BlindAccount from './BlindClient/BlindAccount';
 
 import CreateAnnouncement from './Admin/CreateAnnouncment';
 
@@ -182,10 +182,12 @@ function App(){
           </Route>
           <Route path='/blindloans'>
           <BlindLoans/>
-          </Route>
-          
+          </Route>          
           <Route path='/CreateAnnouncement'>
             <CreateAnnouncement/>
+          </Route>
+          <Route path='/blindaccount'>
+            <BlindAccount/>
           </Route>
           
                     
