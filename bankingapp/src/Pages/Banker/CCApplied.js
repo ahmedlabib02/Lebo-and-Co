@@ -3,9 +3,8 @@ import BankerNavBar from "../../Components/BankerNavBar";
 import { useState } from "react";
 import CCAppliedDetails from "./CCAppliedDetails";
 
-
 function CCApplied() {
-    const [selectedCreditCardId, setSelectedCreditCardId] = useState(null);
+  const [selectedCreditCardId, setSelectedCreditCardId] = useState(null);
 
   const tableData = [
     {
@@ -23,88 +22,92 @@ function CCApplied() {
       Type: "Silver"
     },
     {
-        CCid: 3,
-        Name: "Yehia",
-        Amount: "10000",
-        date: "24/11/2002",
-        Type: "Platinum"
+      CCid: 3,
+      Name: "Yehia",
+      Amount: "10000",
+      date: "24/11/2002",
+      Type: "Platinum"
     }
   ];
-  
+
   const handleViewDetails = (CCid) => {
     setSelectedCreditCardId(CCid);
   };
 
   const handleViewFiles = (CCid) => {
-   
-   console.log("File Viewed");
+    console.log("File Viewed");
   };
-  const handleReject = () =>{
+
+  const handleReject = () => {
     alert("Credit Card Rejected");
-};
-const handleAccept = () =>{
+  };
+
+  const handleAccept = () => {
     alert("Credit Card Accepted");
-};
+  };
+
   const selectedCreditCard = tableData.find((creditCard) => creditCard.CCid === selectedCreditCardId);
+
   return (
-  
     <div className="flex flex-col min-h-screen">
-       <BankerNavBar/>
-        {  selectedCreditCard? (
-        <div className=" mt-2">
-            <CCAppliedDetails creditCard={selectedCreditCard}/>
-          <div className="flex items-center justify-center ml-8 gap-10">
-            <button className="flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold bg-red-500 hover:bg-red-700 mr-20"
-            onClick={handleReject}>
-              Reject
-            </button>
-            <button className="flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold bg-green-500 hover:bg-green-700"
-            onClick={handleAccept}>
+      <BankerNavBar />
+      <div className="flex flex-grow items-center justify-center">
+        {selectedCreditCard ? (
+          <div className="bg-white rounded-lg shadow-lg p-8 w-96">
+            <CCAppliedDetails creditCard={selectedCreditCard} />
+            <div className="flex justify-center space-x-4 mt-6">
+              <button
+                className="px-4 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white font-bold"
+                onClick={handleReject}
+              >
+                Reject
+              </button>
+              <button
+                className="px-4 py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white font-bold"
+                onClick={handleAccept}
+              >
                 Accept
-            </button>
+              </button>
+            </div>
           </div>
-          </div>):(<div>
-        <TableContainer component={Paper}>
-        <Table aria-aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Credit Card id</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Amount</TableCell>
-            <TableCell>Date</TableCell>
-            <TableCell>Files</TableCell>
-            <TableCell>Action</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {tableData.map((row) => (
-            <TableRow key={row.CCid}>
-              <TableCell>{row.CCid}</TableCell>
-              <TableCell>{row.Name}</TableCell>
-              <TableCell>{row.Amount}</TableCell>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>
-                <button 
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    onClick={() => handleViewFiles(row.CCid)}>
-                  View Files
-                  
-                </button>
-              </TableCell>
-              <TableCell>
-                <button 
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    onClick={() => handleViewDetails(row.CCid)}>
-                  View Details
-                  
-                </button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer> </div>)}
- </div>
+        ) : (
+          <TableContainer component={Paper} className="max-w-3xl">
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell className="font-bold">Credit Card ID</TableCell>
+                  <TableCell className="font-bold">Name</TableCell>
+                  <TableCell className="font-bold">Amount</TableCell>
+                  <TableCell className="font-bold">Date</TableCell>
+                  <TableCell className="font-bold">Files</TableCell>
+                  <TableCell className="font-bold">Action</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {tableData.map((row) => (
+                  <TableRow key={row.CCid}>
+                    <TableCell>{row.CCid}</TableCell>
+                    <TableCell>{row.Name}</TableCell>
+                    <TableCell>{row.Amount}</TableCell>
+                    <TableCell>{row.date}</TableCell>
+                    <TableCell>
+                      <button className="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-bold" onClick={() => handleViewFiles(row.CCid)}>
+                        View Files
+                      </button>
+                    </TableCell>
+                    <TableCell>
+                      <button className="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-bold" onClick={() => handleViewDetails(row.CCid)}>
+                        View Details
+                      </button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
+      </div>
+    </div>
   );
 }
 
