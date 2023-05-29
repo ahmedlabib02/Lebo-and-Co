@@ -30,6 +30,8 @@ import Banker from './Pages/Banker/Banker';
 import AccountsApplied from './Pages/Banker/AccountsApplied';
 import LoansApplied from './Pages/Banker/LoansApplied';
 import CCApplied from './Pages/Banker/CCApplied';
+import CreditPoints from './Pages/CreditCard/CreditPoints';
+import TechnicalIssueTable from './Components/TechnicalIssueTable';
 import ModalPage from './Pages/ModalPage';
 import Terms from './Pages/Terms';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
@@ -38,6 +40,8 @@ import Profile from './Pages/Profile';
 import CreateBanker from './Admin/CreateBanker';
 import Bankerprofile from './Pages/Banker/Bankerprofile';
 import Adminprofile from './Admin/Adminprofile';
+import ClientsView from './Pages/Banker/ClientsView';
+import BankerReports from './Pages/Banker/BankerReports';
 import BlindHomepage from './BlindClient/Homepage';
 import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
 import BlindAccount from './BlindClient/BlindAccount';
@@ -132,8 +136,7 @@ function App(){
          </Route>
          <Route path='/ViewApplications'>
           <ViewApplications/>
-         
-          </Route> 
+          </Route>   
         <Route path='/Banker'>
           <Banker/>
           </Route>  
@@ -166,8 +169,6 @@ function App(){
           <Route path='/AdminHomePage'>
           <AdminHomePage/>
           </Route> 
-          
-           
           <Route path='/CreateBanker'>
           <CreateBanker/>
           </Route> 
@@ -176,6 +177,12 @@ function App(){
           </Route>
           <Route path='/Adminprofile'>
             <Adminprofile/>
+          </Route>
+          <Route path= '/ClientsView'>
+            <ClientsView/>
+          </Route>
+          <Route path='/BankerReports'>
+            <BankerReports/>
           </Route>
           <Route path='/blindclient'>
           <BlindHomepage/>
