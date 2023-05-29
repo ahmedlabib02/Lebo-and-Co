@@ -19,7 +19,6 @@ import International from './Pages/Transfers/International';
 import Contact from './Pages/Contact';
 import Bills from './Pages/Bill/Bills';
 import LivingBills from './Pages/LivingBills';
-import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
 import AdminHomePage from './Admin/AdminHomePage';
 import ManageAccounts from './Admin/ManageAccounts/ManageAccounts';
@@ -31,8 +30,6 @@ import Banker from './Pages/Banker/Banker';
 import AccountsApplied from './Pages/Banker/AccountsApplied';
 import LoansApplied from './Pages/Banker/LoansApplied';
 import CCApplied from './Pages/Banker/CCApplied';
-import CreditPoints from './Pages/CreditCard/CreditPoints';
-import TechnicalIssueTable from './Components/TechnicalIssueTable';
 import ModalPage from './Pages/ModalPage';
 import Terms from './Pages/Terms';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
@@ -41,6 +38,10 @@ import Profile from './Pages/Profile';
 import CreateBanker from './Admin/CreateBanker';
 import Bankerprofile from './Pages/Banker/Bankerprofile';
 import Adminprofile from './Admin/Adminprofile';
+import BlindHomepage from './BlindClient/Homepage';
+import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
+
+
 
 function App(){
    
@@ -175,6 +176,13 @@ function App(){
           <Route path='/Adminprofile'>
             <Adminprofile/>
           </Route>
+          <Route path='/blindclient'>
+          <BlindHomepage/>
+          </Route>
+          <Route path='/blindloans'>
+          <BlindLoans/>
+          </Route>
+          
           
                     
          

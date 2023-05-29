@@ -8,6 +8,9 @@
     "@mui/material": "^5.13.2",
     "@mui/styles": "^5.13.2",
     "@ramonak/react-progress-bar": "^5.0.3",
+    "@react-aria/button": "^3.7.2",
+    "@react-aria/focus": "^3.12.1",
+    "@react-aria/utils": "^3.17.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -23,6 +26,7 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "react-slideshow-image": "^4.2.1",
+    "react-speech-recognition": "^3.10.0",
     "responsive-image": "^0.3.1",
     "tailwind": "^4.0.0",
     "web-vitals": "^2.1.4"

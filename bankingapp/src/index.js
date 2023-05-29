@@ -16,6 +16,8 @@ root.render(
 <PaymentProvider>
     <App/>
     </PaymentProvider>
-    </NavigationProvider>
+ </NavigationProvider>
+
+
 
 );
