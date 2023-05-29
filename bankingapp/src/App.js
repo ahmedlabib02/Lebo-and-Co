@@ -21,30 +21,23 @@ import Bills from './Pages/Bill/Bills';
 import LivingBills from './Pages/LivingBills';
 import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
-<<<<<<< HEAD
 import AdminHomePage from './Admin/AdminHomePage';
 import ManageAccounts from './Admin/ManageAccounts/ManageAccounts';
 import DeleteAccounts from './Admin/ManageAccounts/DeleteAccounts';
 import BlockUsers from './Admin/ManageAccounts/BlockUsers';
 import Reports from './Admin/Reports/Reports';
 import ViewApplications from './Admin/ViewApplications/ViewApplications';
-=======
 import Banker from './Pages/Banker/Banker';
 import AccountsApplied from './Pages/Banker/AccountsApplied';
 import LoansApplied from './Pages/Banker/LoansApplied';
 import CCApplied from './Pages/Banker/CCApplied';
->>>>>>> fb3738579cc670ec3cf637e38b6668188ad693b7
 import CreditPoints from './Pages/CreditCard/CreditPoints';
 import TechnicalIssueTable from './Components/TechnicalIssueTable';
 import ModalPage from './Pages/ModalPage';
-<<<<<<< HEAD
-=======
 import Terms from './Pages/Terms';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
 import About from './Pages/About';
 import Profile from './Pages/Profile';
-import ManageAccounts from './Admin/ManageAccounts/ManageAccounts';
->>>>>>> fb3738579cc670ec3cf637e38b6668188ad693b7
 import CreateBanker from './Admin/CreateBanker';
 
 function App(){
@@ -117,28 +110,6 @@ function App(){
         </Route>
         <Route path='/payment'>
           <Payment/>
-<<<<<<< HEAD
-          </Route>  
-        <Route path='/AdminHomepage'>
-          <AdminHomePage/>
-          </Route>
-        <Route path='/ManageAccounts'>
-          <ManageAccounts/>
-          </Route>  
-        <Route path='/DeleteAccounts'>
-          <DeleteAccounts/>
-          </Route> 
-         <Route path='/BlockUsers'>
-          <BlockUsers/>
-          </Route>       
-         <Route path='/Reports'>
-          <Reports/>
-         </Route>
-         <Route path='/ViewApplications'>
-          <ViewApplications/>
-         
-          </Route> 
-=======
           </Route>   
         <Route path='/Banker'>
           <Banker/>
@@ -169,7 +140,6 @@ function App(){
         </Route> 
      
           
->>>>>>> fb3738579cc670ec3cf637e38b6668188ad693b7
           <Route path='/AdminHomePage'>
           <AdminHomePage/>
           </Route> 
