@@ -20,7 +20,8 @@ function Login() {
 
     else if(username === 'bank' && password === '789'){
       navigate('/Banker');
-    }
+    }else if (username==='blind'&& password==='123')
+      navigate('/blindclient');
   };
   const handleRegister = () => {
   navigate('/register')

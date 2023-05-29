@@ -11,7 +11,7 @@ function MyLoans() {
   const loans = [
    { id: 1,
     type: "Car Loan",
-    amount: "$25,000",
+    amount: 25000,
     dueDate: "May 31, 2023",
     interestRate: "5%",
     term: "60 months",
@@ -21,7 +21,7 @@ function MyLoans() {
   {
     id: 2,
     type: "Personal Loan",
-    amount: "$200,000",
+    amount: 200000,
     dueDate: "June 15, 2024",
     interestRate: "8%",
     term: "36 months",
@@ -31,7 +31,7 @@ function MyLoans() {
   {
     id: 3,
     type: "Personal Loan",
-    amount: "$10,000",
+    amount: 10000,
     dueDate: "April 20, 2023",
     interestRate: "7.5%",
     term: "24 months",
