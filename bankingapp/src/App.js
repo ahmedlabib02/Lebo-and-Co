@@ -43,6 +43,7 @@ import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
 
 
 import CreateAnnouncement from './Admin/CreateAnnouncment';
+import BlindBills from './BlindClient/BlindBill/BlindBills';
 
 function App(){
    
@@ -186,6 +187,9 @@ function App(){
           
           <Route path='/CreateAnnouncement'>
             <CreateAnnouncement/>
+          </Route>
+          <Route path='/blindbills'>
+            <BlindBills/>
           </Route>
           
                     
