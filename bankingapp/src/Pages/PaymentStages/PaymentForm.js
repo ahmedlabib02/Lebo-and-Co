@@ -6,9 +6,11 @@ import CreditCardMethod from "./CreditCardMethod";
 import TransferMethod from "./TransferMethod";
 import OTPandConfirmation from "./OTPandConfirmation";
 import { AiOutlineSend } from "react-icons/ai";
+import Modal from 'react-modal';
 
 
 function PaymentForm({paymentInfo}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     paymentMethod: "",holderName:"",cardNumber:"",cvv:"",expiryMonth:"", expiryYear:"",otp:""
@@ -29,13 +31,18 @@ function PaymentForm({paymentInfo}) {
     }
     return true; 
   };
-  
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   
   
 
   const handleNextClick = () => {
         if(page!==2)  
         setPage((currPage) => currPage + 1);
+        else
+        setIsModalOpen(true);
   };
 
   const handlePrevClick = () => {
@@ -129,6 +136,25 @@ function PaymentForm({paymentInfo}) {
           </div>
         )}
       </div>
+      <Modal
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  contentLabel="Set Reminder Modal"
+  className="modal"
+  overlayClassName="modal-overlay"
+>
+        <h2 className="text-2xl font-bold mb-4">Payment Confirmation</h2>
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-2">By clicking 'Confirm Payment,' you agree to the terms and conditions of the purchase. Thank you for choosing our services!"</label>
+         
+          <button
+            className="bg-green-500 text-white text-lg px-4 py-2 rounded-lg self-start"
+            onClick={closeModal}
+          >
+            Confirm Payment
+          </button>
+        </div>
+      </Modal>
     </div>
   );
   

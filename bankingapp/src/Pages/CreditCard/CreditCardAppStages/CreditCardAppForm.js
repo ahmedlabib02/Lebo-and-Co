@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { MdNavigateBefore, MdNavigateNext, MdDone } from "react-icons/md";
 import { FaFileAlt, FaUser } from "react-icons/fa";
-
+import Modal from 'react-modal';
 import CreditCardPersonalInfo from "./CreditCardPersonalInfo";
 import CreditCardAppDocs from "./CreditCardAppDocs";
 
 function CreditCardAppForm(){
         const [page, setPage] = useState(0);
+        const [isModalOpen, setIsModalOpen] = useState(false);
         const [formData, setFormData] = useState({
         pin:"",
         type:"",
@@ -24,19 +25,21 @@ function CreditCardAppForm(){
           formData.type!=="" && formData.wantedLimit!=="") ;
 
         }  else if (page === 1) {
-          return formData.documents.length > 0 && formData.agreeTerms;
+          return formData.documents.length > 0 && formData.agreeTerms ;
         }
         return true; // No validation for other pages
       };
       
-      
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
+    
       
     
       const handleNextClick = () => {
         if (isValidForm()) {
-          if (page === 1) {
-            alert("FORM SUBMITTED");
-            console.log(formData);
+          if (page === 1) {          
+            setIsModalOpen(true);
           } else {
             setPage((currPage) => currPage + 1);
           }
@@ -122,6 +125,25 @@ function CreditCardAppForm(){
               </div>
             
           </div>
+          <Modal
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  contentLabel="Set Reminder Modal"
+  className="modal"
+  overlayClassName="modal-overlay"
+>
+        <h2 className="text-2xl font-bold mb-4">Application Confirmation</h2>
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-2">By clicking 'Submit,' you agree to the terms and conditions of the CreditCard Application request. Thank you for choosing our services!"</label>
+         
+          <button
+            className="bg-green-500 text-white text-lg px-4 py-2 rounded-lg self-start"
+            onClick={closeModal}
+          >
+            Submit
+          </button>
+        </div>
+      </Modal>
         </div>
       );
     
