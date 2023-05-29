@@ -52,7 +52,7 @@ import BlindAccount from './BlindClient/BlindAccount';
 
 import CreateAnnouncement from './Admin/CreateAnnouncment';
 import BlindCreditCard from './BlindClient/BlindCreditCard/BlindCreditCard';
-
+import BlindLogin from './BlindClient/BlindLogin';
 function App(){
    
 
@@ -222,6 +222,9 @@ function App(){
             <BlindAccount/>
           </Route>
           
+          <Route path='/BlindLogin'>
+            <BlindLogin/>
+          </Route>
                     
          
       
