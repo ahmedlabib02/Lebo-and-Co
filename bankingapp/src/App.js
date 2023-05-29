@@ -42,6 +42,7 @@ import BlindHomepage from './BlindClient/Homepage';
 import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
 
 
+import CreateAnnouncement from './Admin/CreateAnnouncment';
 
 function App(){
    
@@ -183,6 +184,9 @@ function App(){
           <BlindLoans/>
           </Route>
           
+          <Route path='/CreateAnnouncement'>
+            <CreateAnnouncement/>
+          </Route>
           
                     
          
