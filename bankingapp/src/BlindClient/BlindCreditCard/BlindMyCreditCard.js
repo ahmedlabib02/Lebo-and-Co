@@ -1,9 +1,9 @@
 import React from 'react';
-import useNavigation from '../hooks/use-navigation';
+import useNavigation from '../../hooks/use-navigation';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 
-const Homepage = () => {
+const BlindMyCreditCard = () => {
   const {navigate} = useNavigation();
   const { transcript, resetTranscript } = useSpeechRecognition();
 
@@ -45,46 +45,24 @@ const Homepage = () => {
 
   return (
     <div className="bg-black text-white h-screen flex flex-col items-center justify-center">
-      <h1 className="text-6xl font-bold mb-8">Homepage</h1>
+      <h1 className="text-6xl font-bold mb-8">My CreditCards</h1>
       <div className="flex  items-center gap-8">
         <button
-          onClick={() => handleNavigation('loans')}
-          onFocus={() => speak('You are now on Loans button')}
+          onClick={() => handleNavigation('cardone')}
+          onFocus={() => speak('You are now on your Credit Card ending in 3455')}
           className="text-4xl bg-white text-black px-8 py-4 rounded"
         >
-          Loans
+          Card ending in 3455
         </button>
         <button
-          onClick={() => handleNavigation('creditcard')}
-          onFocus={() => speak('You are now on Credit Card Button')}
+          onClick={() => handleNavigation('cardtwo')}
+          onFocus={() => speak('You are now on your Credit Card ending in 1234')}
           className="text-4xl bg-white text-black px-8 py-4 rounded"
         >
-          Credit Card
-        </button>
-        <button
-          onClick={() => handleNavigation('bank account')}
-          onFocus={() => speak('You are now on Bank Account button')}
-          className="text-4xl bg-white text-black px-8 py-4 rounded"
-        >
-          Bank Account
-        </button>
-        <button
-          onClick={() => handleNavigation('bills')}
-          onFocus={() => speak('You are now on Bills button')}
-          className="text-4xl bg-white text-black px-8 py-4 rounded"
-        >
-          Bills
-        </button>
-        <button
-          onClick={() => handleNavigation('notifications')}
-          onFocus={() => speak('You are now on Notifications button')}
-          className="text-4xl bg-white text-black px-8 py-4 rounded"
-        >
-          Notifications
+          Card ending in 1234
         </button>
       </div>
     </div>
   );
 };
-
-export default Homepage;
+export default BlindMyCreditCard;

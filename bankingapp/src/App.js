@@ -30,11 +30,6 @@ import Banker from './Pages/Banker/Banker';
 import AccountsApplied from './Pages/Banker/AccountsApplied';
 import LoansApplied from './Pages/Banker/LoansApplied';
 import CCApplied from './Pages/Banker/CCApplied';
-<<<<<<< HEAD
-import CreditPoints from './Pages/CreditCard/CreditPoints';
-import TechnicalIssueTable from './Components/TechnicalIssueTable';
-=======
->>>>>>> aedc03d19ad9c4dd2d34961bd7b2d1cb36a49562
 import ModalPage from './Pages/ModalPage';
 import Terms from './Pages/Terms';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
@@ -45,9 +40,13 @@ import Bankerprofile from './Pages/Banker/Bankerprofile';
 import Adminprofile from './Admin/Adminprofile';
 import BlindHomepage from './BlindClient/Homepage';
 import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
-
+import BlindMyCreditCard from './BlindClient/BlindCreditCard/BlindMyCreditCard';
+import BlindCardOne from './BlindClient/BlindCreditCard/BlindCardOne';
+import BlindCardTwo from './BlindClient/BlindCreditCard/BlindCardTwo';
+import BlindApplyForCreditCards from './BlindClient/BlindCreditCard/BlindApplyforCreditCard';
 
 import CreateAnnouncement from './Admin/CreateAnnouncment';
+import BlindCreditCard from './BlindClient/BlindCreditCard/BlindCreditCard';
 
 function App(){
    
@@ -119,9 +118,6 @@ function App(){
         </Route>
         <Route path='/payment'>
           <Payment/>
-<<<<<<< HEAD
-          </Route>   
-=======
           </Route>  
         <Route path='/AdminHomepage'>
           <AdminHomePage/>
@@ -142,7 +138,6 @@ function App(){
           <ViewApplications/>
          
           </Route> 
->>>>>>> aedc03d19ad9c4dd2d34961bd7b2d1cb36a49562
         <Route path='/Banker'>
           <Banker/>
           </Route>  
@@ -195,6 +190,26 @@ function App(){
           
           <Route path='/CreateAnnouncement'>
             <CreateAnnouncement/>
+          </Route>
+
+          <Route path='/blindcreditcard'>
+            <BlindCreditCard/>
+          </Route>
+
+          <Route path='/blindmycreditcard'>
+            <BlindMyCreditCard/>
+          </Route>
+
+          <Route path='/blindcardone'>
+            <BlindCardOne/>
+          </Route>
+
+          <Route path='/blindcardtwo'>
+            <BlindCardTwo/>
+          </Route>
+
+          <Route path='/blindapplyforcreditcard'>
+            <BlindApplyForCreditCards/>
           </Route>
           
                     
