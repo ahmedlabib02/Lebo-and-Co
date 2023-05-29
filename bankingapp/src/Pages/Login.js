@@ -17,6 +17,10 @@ function Login() {
     else if(username === 'admin' && password === '456'){
       navigate('/AdminHomePage');
     }
+
+    else if(username === 'bank' && password === '789'){
+      navigate('/Banker');
+    }
   };
   const handleRegister = () => {
   navigate('/register')

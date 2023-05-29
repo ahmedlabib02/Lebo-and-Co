@@ -1,10 +1,11 @@
 import { useState } from "react";
 import PaymentMethod from "./PaymentMethod";
 import { MdNavigateBefore, MdNavigateNext, MdDone } from "react-icons/md";
-import { FaFileAlt, FaCar, FaUser } from "react-icons/fa";
+import { FaFileAlt, FaUser} from "react-icons/fa";
 import CreditCardMethod from "./CreditCardMethod";
 import TransferMethod from "./TransferMethod";
 import OTPandConfirmation from "./OTPandConfirmation";
+import { AiOutlineSend } from "react-icons/ai";
 
 
 function PaymentForm({paymentInfo}) {
@@ -14,7 +15,7 @@ function PaymentForm({paymentInfo}) {
   });
   var Method = (formData.paymentMethod==='account-transfer')?('Account Transfer Details'):('Credit Card Information');
   const FormTitles = ["Payment method",Method, "Confirmation"];
-  const FormIcons = [<FaFileAlt />, <FaCar />, <FaUser />];
+  const FormIcons = [<FaFileAlt />, <AiOutlineSend/>, <FaUser />];
 
   const isValidForm = () => {
     if(page===1 && formData.paymentMethod==='credit-card'){
@@ -67,7 +68,7 @@ function PaymentForm({paymentInfo}) {
       return <CreditCardMethod amount={paymentInfo.amount} formData={formData} setFormData={setFormData}/> 
     }  
     else if (page ===1 && formData.paymentMethod==='account-transfer'){
-      return <TransferMethod amount={paymentInfo.amount} formData={formData} setFormData={setFormData}/>
+      return <TransferMethod amount={paymentInfo.amount} type={paymentInfo.billtype} formData={formData} setFormData={setFormData}/>
     } 
     else if(page===2){
       return <OTPandConfirmation formData={formData} setFormData={setFormData}/>

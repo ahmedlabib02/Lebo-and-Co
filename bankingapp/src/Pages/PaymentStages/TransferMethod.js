@@ -1,7 +1,15 @@
+import { FaLayerGroup } from "react-icons/fa";
+import { useState } from "react";
 
-
-function TransferMethod({amount}){
+function TransferMethod({amount, type}){
+  const [state,setState] = useState(amount);
+  const flag = (type !== 'Credit card');
   const accountNumber = 2849849;
+  const handleChange = (e) =>{
+  if(e.target.value<=amount){
+    setState(e.target.value);
+  }
+  };
   return   (
     <div className="bg-white rounded-lg p-4">
       <div className="flex flex-col mb-2">
@@ -20,10 +28,12 @@ function TransferMethod({amount}){
           Amount:
         </label>
         <input
-          type="text"
-          value={amount}
-          className="bg-gray-200 cursor-not-allowed"
-          readOnly
+          type="number"
+          value={state}
+          onChange={handleChange}
+          className={((flag)&&("bg-gray-200 cursor-not-allowed") ) || ((!flag)&&("bg-gray-200"))}
+          readOnly={flag}
+          max={amount}
         />
       </div>
     

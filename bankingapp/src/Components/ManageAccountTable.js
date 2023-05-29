@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TableContainer, Table, TableBody, TableRow, TableCell, Paper,TableHead} from "@mui/material";
+import { TableContainer, Table, TableBody, TableRow, TableCell, Paper,TableHead,TextField} from "@mui/material";
 
 function ManageAccountTable() {
     const [accounts, setAccounts] = useState([
@@ -19,7 +19,8 @@ function ManageAccountTable() {
           status: "Active"
         }
       ]);
-    
+      const [searchQuery, setSearchQuery] = useState("");
+
       const handleToggleAccountStatus = (username) => {
         const updatedAccounts = accounts.map((account) => {
           if (account.username === username) {
@@ -33,39 +34,69 @@ function ManageAccountTable() {
     
         setAccounts(updatedAccounts);
       };
+      const handleSearchQueryChange = (event) => {
+        const query = event.target.value;
+        setSearchQuery(query);
+      };
     
-      return (
-        <TableContainer component={Paper}>
-          <Table aria-aria-label="account table">
-            <TableHead>
-              <TableRow>
-                <TableCell style={{ width: '25%' }}>Username</TableCell>
-                <TableCell style={{ width: '35%' }}>Email</TableCell>
-                <TableCell style={{ width: '20%' }}>Status</TableCell>
-                <TableCell style={{ width: '20%' }}>Action</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {accounts.map((account) => (
-                <TableRow key={account.username}>
-                  <TableCell>{account.username}</TableCell>
-                  <TableCell>{account.email}</TableCell>
-                  <TableCell>{account.status}</TableCell>
-                  <TableCell>
-                    <button
-                      className={`bg-${account.status === "Blocked" ? 'blue' : 'red'}-500 hover:bg-${account.status === "Blocked" ? 'blue' : 'red'}-700 text-white font-bold py-2 px-4 rounded`}
-                      style={{ width: '100%' }}
-                      onClick={() => handleToggleAccountStatus(account.username)}
-                    >
-                      {account.status === "Blocked" ? "Unblock" : "Block"}
-                    </button>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      );
-    }
+      // Filter accounts based on search query
+      const filteredAccounts = accounts.filter((account) =>
+        account.username.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+        return (
+          <div className="mt-8" style={{ textAlign: "center" }}>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <div className="text-2xl mt-2">
+                Search: 
+                </div>
+              <TextField className="ml-2"
+                type="text"
+                placeholder="Search users..."
+                value={searchQuery}
+                onChange={handleSearchQueryChange}
+                variant="outlined"
+                style={{ height: "40px", width: "300px" }}
+                inputProps={{ style: { height: "100%" } }}
+              />
+            </div>
+            <TableContainer component={Paper}>
+              <Table aria-aria-label="account table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell style={{ width: "25%" }}>Username</TableCell>
+                    <TableCell style={{ width: "35%" }}>Email</TableCell>
+                    <TableCell style={{ width: "20%" }}>Status</TableCell>
+                    <TableCell style={{ width: "20%" }}>Action</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {filteredAccounts.map((account) => (
+                    <TableRow key={account.username}>
+                      <TableCell>{account.username}</TableCell>
+                      <TableCell>{account.email}</TableCell>
+                      <TableCell>{account.status}</TableCell>
+                      <TableCell>
+                        <button
+                          className={`bg-${
+                            account.status === "Blocked" ? "blue" : "red"
+                          }-500 hover:bg-${
+                            account.status === "Blocked" ? "blue" : "red"
+                          }-700 text-white font-bold py-2 px-4 rounded`}
+                          style={{ width: "100%" }}
+                          onClick={() => handleToggleAccountStatus(account.username)}
+                        >
+                          {account.status === "Blocked" ? "Unblock" : "Block"}
+                        </button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
+        );
+     }  
+      
 
 export default ManageAccountTable;

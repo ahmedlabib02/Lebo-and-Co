@@ -26,7 +26,7 @@ function International({dataEntry, setDataEntry}){
 
     return(
       <div className="bg-white rounded-lg p-4">
-      <h2 className="text-2xl font-bold mb-4">Internal Transfer</h2>
+      <h2 className="text-2xl font-bold mb-4">International Transfer</h2>
       <div className="flex flex-col mb-2">
         <label className="mb-1">
           Name:
