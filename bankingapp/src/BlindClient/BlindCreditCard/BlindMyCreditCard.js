@@ -48,13 +48,6 @@ const BlindMyCreditCard = () => {
       <h1 className="text-6xl font-bold mb-8">My CreditCards</h1>
       <div className="flex  items-center gap-8">
         <button
-          onClick={() => handleNavigation('cardone')}
-          onFocus={() => speak('You are now on your Credit Card ending in 3455')}
-          className="text-4xl bg-white text-black px-8 py-4 rounded"
-        >
-          Card ending in 3455
-        </button>
-        <button
           onClick={() => handleNavigation('cardtwo')}
           onFocus={() => speak('You are now on your Credit Card ending in 1234')}
           className="text-4xl bg-white text-black px-8 py-4 rounded"

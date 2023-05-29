@@ -3,6 +3,15 @@ import { useState } from 'react';
 function EmploymentInfo({ formData, setFormData }) {
   const [employmentStatus, setEmploymentStatus] = useState('');
 
+  const speak = (text) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(utterance);
+    } else {
+      console.error('Speech synthesis is not supported in this browser.');
+    }
+  };
+
   const handleEmploymentStatusChange = (event) => {
     setEmploymentStatus(event.target.value);
 
@@ -45,6 +54,7 @@ function EmploymentInfo({ formData, setFormData }) {
               checked={employmentStatus === 'Yes'}
               onChange={handleEmploymentStatusChange}
               className="w-6 h-6"
+              onFocus={()=>speak('are you currently employed')}
             />
             Yes
           </label>
@@ -57,6 +67,7 @@ function EmploymentInfo({ formData, setFormData }) {
               checked={employmentStatus === 'No'}
               onChange={handleEmploymentStatusChange}
               className="w-6 h-6"
+              onFocus={()=>speak('you are not employed')}
             />
             No
           </label>
@@ -76,6 +87,7 @@ function EmploymentInfo({ formData, setFormData }) {
               onChange={handleEmployerNameChange}
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
+              onFocus={()=>speak('enter your employee name')}
             />
           </div>
           <div className="mb-4">
@@ -89,6 +101,7 @@ function EmploymentInfo({ formData, setFormData }) {
               onChange={handleJobTitleChange}
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
+              onFocus={()=>speak('enter your job title')}
             />
           </div>
           <div className="mb-4">
@@ -102,6 +115,7 @@ function EmploymentInfo({ formData, setFormData }) {
               onChange={handleMonthlyIncomeChange}
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
+              onFocus={()=>speak('enter your income')}
             />
           </div>
         </div>

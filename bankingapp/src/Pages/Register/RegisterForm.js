@@ -7,10 +7,19 @@ import PersonalInfo from "./PersonalInfo";
 import EmploymentInfo from './EmploymentInfo';
 import AccountSummary from './AccountSummary';
 import IdentificationInfo from "./IdentificationInfo";
+import useNavigation from "../../hooks/use-navigation";
 
 
 function RegisterForm(){
-    
+  const {navigate} = useNavigation();
+  const speak = (text) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(utterance);
+    } else {
+      console.error('Speech synthesis is not supported in this browser.');
+    }
+  };
 
    const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
@@ -37,11 +46,16 @@ function RegisterForm(){
           return formData.firstName!==""&& formData.lastName!==""&& formData.userName!==""&&formData.email!==""&&formData.password!==""&&formData.phone!=="";
           else if(page===1)
           return formData.nationalIdNumber!=="" && formData.issuingCountry!==""&& formData.expiryDate!==""&& formData.document.length>0;
-          else if(page===2)
-          return formData.jobTitle!=="" && formData.monthlyIncome!=="";
           else 
           return true;
         
+      };
+
+      const handleSpeakSummary = () => {
+        const summaryText = Object.entries(formData)
+          .map(([key, value]) => `${key}: ${value}`)
+          .join('. ');
+        speak(summaryText);
       };
       
       
@@ -49,6 +63,15 @@ function RegisterForm(){
     
       const handleNextClick = () => { 
             setPage((currPage) => currPage + 1);
+            if(page===2)
+            handleSpeakSummary();
+            if(page===(3)){
+             speak('form submitted successfully');
+            navigate('/');
+            }
+             
+            
+            
       };
     
       const handlePrevClick = () => {
@@ -106,7 +129,7 @@ function RegisterForm(){
               <div className="flex justify-between">
                 <button
                   disabled={page === 0}
-                  onClick={handlePrevClick}
+                  onClick={handlePrevClick} onFocus={()=>speak('you are now on previous button')}
                   className={`flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold ${
                     (page!==0) ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-400 cursor-not-allowed"
                   }`}
@@ -115,7 +138,7 @@ function RegisterForm(){
                   Prev
                 </button>
                 <button
-                  onClick={handleNextClick}
+                  onClick={handleNextClick} onFocus={()=>speak('you are now on next button')}
                   className={`flex items-center justify-center px-4 py-2 rounded-lg text-white font-bold ${
                     isValidForm() ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-400 cursor-not-allowed"
                   }`}

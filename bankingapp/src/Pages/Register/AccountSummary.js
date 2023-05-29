@@ -1,6 +1,14 @@
 
 
 import React from 'react';
+const speak = (text) => {
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    speechSynthesis.speak(utterance);
+  } else {
+    console.error('Speech synthesis is not supported in this browser.');
+  }
+};
 
 function AccountSummary({ formData }) {
   return (
@@ -13,7 +21,7 @@ function AccountSummary({ formData }) {
         <strong>Last Name:</strong> {formData.lastName}
       </p>
       <p className="mb-2">
-        <strong>Username:</strong> {formData.userName}
+        <strong>Username:</strong> {formData. userName}
       </p>
       <p className="mb-2">
         <strong>Email:</strong> {formData.email}

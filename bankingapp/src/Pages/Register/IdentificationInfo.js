@@ -5,6 +5,14 @@ function IdentificationInfo({ formData, setFormData }) {
     setFormData({...formData,
       document: Array.from(files)});
   };
+  const speak = (text) => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(utterance);
+    } else {
+      console.error('Speech synthesis is not supported in this browser.');
+    }
+  };
 
   const handleDataChange =(event)=>{
     console.log(event.target.value);
@@ -22,6 +30,7 @@ function IdentificationInfo({ formData, setFormData }) {
             onChange={(e) => setFormData({ ...formData, nationalIdNumber: e.target.value })}
             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+            onFocus={()=>speak('enter your national id number')}
           />
         </div>
         <div>
@@ -35,6 +44,7 @@ function IdentificationInfo({ formData, setFormData }) {
             onChange={(e) => setFormData({ ...formData, issuingCountry: e.target.value })}
             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+            onFocus={()=>speak('enter your issuing country')}
           />
         </div>
       </div>
@@ -49,6 +59,7 @@ function IdentificationInfo({ formData, setFormData }) {
           onChange={handleDataChange}
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
+          onFocus={()=>speak('enter your expiry date')}
         />
       </div>
       <div className="mb-4">
@@ -62,6 +73,7 @@ function IdentificationInfo({ formData, setFormData }) {
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           required
           onChange={handleFileUpload}
+          onFocus={()=>speak('upload your documents')}
         />
       </div>
     </div>
