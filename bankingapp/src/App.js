@@ -36,6 +36,8 @@ import About from './Pages/About';
 import Profile from './Pages/Profile';
 import ManageAccounts from './Admin/ManageAccounts/ManageAccounts';
 import CreateBanker from './Admin/CreateBanker';
+import Bankerprofile from './Pages/Banker/Bankerprofile';
+import Adminprofile from './Admin/Adminprofile';
 
 function App(){
    
@@ -149,6 +151,12 @@ function App(){
           <Route path='/CreateBanker'>
           <CreateBanker/>
           </Route> 
+          <Route path='/Bankerprofile'>
+            <Bankerprofile/>
+          </Route>
+          <Route path='/Adminprofile'>
+            <Adminprofile/>
+          </Route>
           
                     
          

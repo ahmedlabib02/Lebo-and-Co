@@ -13,7 +13,7 @@ function MyCredit() {
   const creditCards = [
    { id: 1,
     number: "1234 1234 1234 3455",
-    remainingCredit: "$1000",
+    remainingCredit: 1000,
     creditLimit: "$5000",
     expiry:"12/2027",
     name:'Ahmed Labib',
@@ -27,7 +27,7 @@ function MyCredit() {
   {
     id: 2,
     number: "1234 1234 1234 1234",
-    remainingCredit: "$1000",
+    remainingCredit: 1000,
     creditLimit: "$9000",
     expiry:"04/2026",
     name:'Ahmed Labib',
