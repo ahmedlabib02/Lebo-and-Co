@@ -6,7 +6,8 @@ function LoanDetails({ loan }) {
   const {navigate}= useNavigation();
   const {setPaymentInfo,paymentInfo} = useContext(PaymentContext);
   const handlePayInstallment = () => {
-    setPaymentInfo({amount:loan.amount,typeofbill:"loan"})
+    console.log(loan.amount);
+    setPaymentInfo({amount:loan.amount,billtype:"Loan"})
     navigate('/payment');
   };
 

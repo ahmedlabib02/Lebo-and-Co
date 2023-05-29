@@ -6,6 +6,7 @@ import useNavigation from '../hooks/use-navigation';
 import Footer from '../Components/Footer';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import ImageSlider from '../Components/ImageSlider';
+import NotificationPanel from "./NotificationPanel";
 
 function HomePage() {
   const { navigate } = useNavigation();
@@ -32,7 +33,7 @@ function HomePage() {
     <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen flex flex-col">
       <MenuBar />
 
-      <div className="flex flex-1 flex-col items-center justify-center">
+      <div className="flex flex-1 flex-col items-center justify-center ">
         <div className="relative w-full mb-8">
            <ImageSlider/>
           
@@ -46,6 +47,10 @@ function HomePage() {
             <ButtonCard title="Bills" icon={FaFileInvoiceDollar} onClick={handleBillsClick}homepage /> </div>
         </div>
       </div>
+      <div className="mb-12">
+      <NotificationPanel/>
+      </div>
+      
 
       <Footer />
     </div>

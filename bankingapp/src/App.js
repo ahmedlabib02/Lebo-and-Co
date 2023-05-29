@@ -19,7 +19,6 @@ import International from './Pages/Transfers/International';
 import Contact from './Pages/Contact';
 import Bills from './Pages/Bill/Bills';
 import LivingBills from './Pages/LivingBills';
-import CreditCardBills from './Pages/CreditCardBills';
 import Payment from './Pages/PaymentStages/Payment';
 import AdminHomePage from './Admin/AdminHomePage';
 import ManageAccounts from './Admin/ManageAccounts/ManageAccounts';
@@ -43,6 +42,11 @@ import Bankerprofile from './Pages/Banker/Bankerprofile';
 import Adminprofile from './Admin/Adminprofile';
 import ClientsView from './Pages/Banker/ClientsView';
 import BankerReports from './Pages/Banker/BankerReports';
+import BlindHomepage from './BlindClient/Homepage';
+import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
+
+
+import CreateAnnouncement from './Admin/CreateAnnouncment';
 
 function App(){
    
@@ -160,6 +164,8 @@ function App(){
         <Route path='/profile'>
         <Profile/>
         </Route> 
+     
+          
           <Route path='/AdminHomePage'>
           <AdminHomePage/>
           </Route> 
@@ -178,6 +184,16 @@ function App(){
           <Route path='/BankerReports'>
             <BankerReports/>
           </Route>
+          <Route path='/blindclient'>
+          <BlindHomepage/>
+          </Route>
+          <Route path='/blindloans'>
+          <BlindLoans/>
+          </Route>
+          <Route path='/CreateAnnouncement'>
+            <CreateAnnouncement/>
+          </Route>
+          
                     
          
       
