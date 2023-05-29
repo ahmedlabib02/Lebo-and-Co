@@ -7,6 +7,7 @@ import TransferMethod from "./TransferMethod";
 import OTPandConfirmation from "./OTPandConfirmation";
 import { AiOutlineSend } from "react-icons/ai";
 import Modal from 'react-modal';
+import useNavigation from "../../hooks/use-navigation";
 
 
 function PaymentForm({paymentInfo}) {
@@ -31,8 +32,10 @@ function PaymentForm({paymentInfo}) {
     }
     return true; 
   };
+  const {navigate}= useNavigation();
   const closeModal = () => {
     setIsModalOpen(false);
+    navigate('/homepage');
   };
 
   

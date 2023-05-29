@@ -4,6 +4,7 @@ import { FaFileAlt, FaUser } from "react-icons/fa";
 import Modal from 'react-modal';
 import AccountPersonalInfo from "./accountPersonalInfo";
 import DocumentsInfo from "./openAccountDocs";
+import useNavigation from "../../../hooks/use-navigation";
 
 function AccountApplicationForm(){
         const [page, setPage] = useState(0);
@@ -28,9 +29,10 @@ function AccountApplicationForm(){
         }
         return true; // No validation for other pages
       };
-      
+      const {navigate}= useNavigation();
       const closeModal = () => {
         setIsModalOpen(false);
+        navigate('/homepage');
       };
       
     

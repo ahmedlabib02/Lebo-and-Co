@@ -30,8 +30,6 @@ import Banker from './Pages/Banker/Banker';
 import AccountsApplied from './Pages/Banker/AccountsApplied';
 import LoansApplied from './Pages/Banker/LoansApplied';
 import CCApplied from './Pages/Banker/CCApplied';
-import CreditPoints from './Pages/CreditCard/CreditPoints';
-import TechnicalIssueTable from './Components/TechnicalIssueTable';
 import ModalPage from './Pages/ModalPage';
 import Terms from './Pages/Terms';
 import PrivacyPolicy from './Pages/PrivacyPolicy';

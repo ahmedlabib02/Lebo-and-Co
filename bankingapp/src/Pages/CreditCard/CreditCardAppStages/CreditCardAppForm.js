@@ -4,6 +4,7 @@ import { FaFileAlt, FaUser } from "react-icons/fa";
 import Modal from 'react-modal';
 import CreditCardPersonalInfo from "./CreditCardPersonalInfo";
 import CreditCardAppDocs from "./CreditCardAppDocs";
+import useNavigation from "../../../hooks/use-navigation";
 
 function CreditCardAppForm(){
         const [page, setPage] = useState(0);
@@ -30,8 +31,10 @@ function CreditCardAppForm(){
         return true; // No validation for other pages
       };
       
+      const {navigate}= useNavigation();
       const closeModal = () => {
         setIsModalOpen(false);
+        navigate('/homepage');
       };
     
       

@@ -6,6 +6,7 @@ import CarInfo from "./CarInfo";
 import PersonalInfo from "./PersonalLoanInfo";
 import DocumentInfo from "./DocumentsInfo";
 import Modal from 'react-modal';
+import useNavigation from "../../../hooks/use-navigation";
 
 function LoanApplicationForm() {
   const [page, setPage] = useState(0);
@@ -42,7 +43,7 @@ function LoanApplicationForm() {
     return true; // No validation for other pages
   };
   
-  
+  const {navigate} = useNavigation();
   
 
   const handleNextClick = () => {
@@ -58,6 +59,7 @@ function LoanApplicationForm() {
   };
   const closeModal = () => {
     setIsModalOpen(false);
+    navigate('/homepage');
   };
 
 
