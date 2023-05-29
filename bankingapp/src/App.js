@@ -44,10 +44,15 @@ import ClientsView from './Pages/Banker/ClientsView';
 import BankerReports from './Pages/Banker/BankerReports';
 import BlindHomepage from './BlindClient/Homepage';
 import BlindLoans from './BlindClient/BlindLoan/BlindLoans';
+import BlindMyCreditCard from './BlindClient/BlindCreditCard/BlindMyCreditCard';
+import BlindCardOne from './BlindClient/BlindCreditCard/BlindCardOne';
+import BlindCardTwo from './BlindClient/BlindCreditCard/BlindCardTwo';
+import BlindApplyForCreditCards from './BlindClient/BlindCreditCard/BlindApplyforCreditCard';
 import BlindAccount from './BlindClient/BlindAccount';
 
 import CreateAnnouncement from './Admin/CreateAnnouncment';
 import BlindBills from './BlindClient/BlindBill/BlindBills';
+import BlindCreditCard from './BlindClient/BlindCreditCard/BlindCreditCard';
 
 function App(){
    
@@ -196,6 +201,25 @@ function App(){
           </Route>
           <Route path='/blindbills'>
             <BlindBills/>
+          </Route>
+          <Route path='/blindcreditcard'>
+            <BlindCreditCard/>
+          </Route>
+
+          <Route path='/blindmycreditcard'>
+            <BlindMyCreditCard/>
+          </Route>
+
+          <Route path='/blindcardone'>
+            <BlindCardOne/>
+          </Route>
+
+          <Route path='/blindcardtwo'>
+            <BlindCardTwo/>
+          </Route>
+
+          <Route path='/blindapplyforcreditcard'>
+            <BlindApplyForCreditCards/>
             </Route>
           <Route path='/blindaccount'>
             <BlindAccount/>
