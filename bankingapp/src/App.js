@@ -41,6 +41,7 @@ import Profile from './Pages/Profile';
 import CreateBanker from './Admin/CreateBanker';
 import Bankerprofile from './Pages/Banker/Bankerprofile';
 import Adminprofile from './Admin/Adminprofile';
+import CreateAnnouncement from './Admin/CreateAnnouncment';
 
 function App(){
    
@@ -174,6 +175,9 @@ function App(){
           </Route>
           <Route path='/Adminprofile'>
             <Adminprofile/>
+          </Route>
+          <Route path='/CreateAnnouncement'>
+            <CreateAnnouncement/>
           </Route>
           
                     
