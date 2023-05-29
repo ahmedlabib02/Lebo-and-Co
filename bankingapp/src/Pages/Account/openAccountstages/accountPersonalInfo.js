@@ -32,7 +32,7 @@ function AccountPersonalInfo({ formData, setFormData }) {
           type="text"
           id="loanAmount"
           className="border border-gray-300 rounded-lg px-3 py-2"
-          placeholder="Enter loan amount"
+          placeholder="Enter Deposit amount"
           value={formData.depositAmount}
           onChange={handleLoanAmountChange}
         />
