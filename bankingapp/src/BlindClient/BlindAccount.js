@@ -87,8 +87,8 @@ const BlindAccount = () => {
       </div>
       <div className="mt-12">
         {flag === 'view' && <AccountDetails account={accountDetails} />}
-        {flag === 'open' && <OpenBlindAccount />}
-        {flag === 'transfers' && <BlindTransfers />}
+        {flag === 'open' && <OpenBlindAccount setFlag={setFlag}/>}
+        {flag === 'transfers' && <BlindTransfers setFlag={setFlag} />}
       </div>
     </div>
   );

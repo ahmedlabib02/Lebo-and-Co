@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const LoanApplicationForm = () => {
+const LoanApplicationForm = ({setFlag}) => {
   const [loan, setLoan] = useState({
     loanType: '',
     amount: '',
@@ -68,6 +68,11 @@ const LoanApplicationForm = () => {
     SpeechRecognition.stopListening();
   };
 
+  const handleSubmit = ()=>{
+   speak('Application successful');
+   setFlag(false);
+  }
+
 
   
 
@@ -128,10 +133,9 @@ const LoanApplicationForm = () => {
         
       </form>
       <button
-         
           className="text-3xl bg-blue-500 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           onFocus={() => speak('Do you want to submit?')}
-          onClick={() => speak('Application successful')}
+          onClick={handleSubmit}
         >
           Submit Application
         </button>

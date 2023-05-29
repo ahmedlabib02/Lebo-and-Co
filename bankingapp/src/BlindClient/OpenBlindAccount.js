@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const OpenBlindAccount = () => {
+const OpenBlindAccount = ({setFlag}) => {
   const [account, setLoan] = useState({
     purpose: '',
     depositAmount:'' ,
@@ -49,16 +49,20 @@ const OpenBlindAccount = () => {
 
 
   const handleAmountBlur = () => {
-    setLoan({ ...account, purpose: transcript });
+    setLoan({ ...account, depositAmount: transcript });
     resetTranscript();
     SpeechRecognition.stopListening();
   };
 
   const handlePurposeBlur = () => {
-    setLoan({ ...account, depositAmount: transcript });
+    setLoan({ ...account, purpose: transcript });
     resetTranscript();
     SpeechRecognition.stopListening();
   };
+  const handleSubmit =()=>{
+     speak('Application successful');
+     setFlag(false);
+  }
 
 
   
@@ -113,7 +117,7 @@ const OpenBlindAccount = () => {
          
           className="text-3xl bg-blue-500 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           onFocus={() => speak('Do you want to submit?')}
-          onClick={() => speak('Application successful')}
+          onClick={handleSubmit}
         >
           Submit Application
         </button>
