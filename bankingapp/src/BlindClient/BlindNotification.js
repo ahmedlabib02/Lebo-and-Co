@@ -28,7 +28,7 @@ const BlindNotifiaction = () => {
     }
   };
 
-  const reminders = [
+  const reminders = 
     
     {
       title: "Reminder 1",
@@ -38,8 +38,8 @@ const BlindNotifiaction = () => {
       timestamp: "2023-05-27 09:30 AM",
       recipient: "John Doe",
       priority: "Low",
-}]
-const announcements = [ {
+}
+const announcements =  {
     title: "Bank Announcement",
     summary: "Important announcement regarding the bank",
     type: "Bank Announcement",
@@ -47,9 +47,9 @@ const announcements = [ {
     timestamp: "2023-05-29 11:45 AM",
     recipient: "Alex Johnson",
     priority: "Medium",
-  }]
+  }
 
-  const resolutions=[
+  const resolutions=
     {
         title: "Issue Resolution 2",
         summary: "Resolution of reported issue",
@@ -60,7 +60,7 @@ const announcements = [ {
         priority: "High",
       }
 
-  ]
+  
     
 
 
