@@ -49,10 +49,13 @@ import BlindCardOne from './BlindClient/BlindCreditCard/BlindCardOne';
 import BlindCardTwo from './BlindClient/BlindCreditCard/BlindCardTwo';
 import BlindApplyForCreditCards from './BlindClient/BlindCreditCard/BlindApplyforCreditCard';
 import BlindAccount from './BlindClient/BlindAccount';
-
+import BlindNotification from './BlindClient/BlindNotification';
 import CreateAnnouncement from './Admin/CreateAnnouncment';
+import BlindBills from './BlindClient/BlindBill/BlindBills';
 import BlindCreditCard from './BlindClient/BlindCreditCard/BlindCreditCard';
 import BlindLogin from './BlindClient/BlindLogin';
+
+
 function App(){
    
 
@@ -198,7 +201,9 @@ function App(){
           <Route path='/CreateAnnouncement'>
             <CreateAnnouncement/>
           </Route>
-
+          <Route path='/blindbills'>
+            <BlindBills/>
+          </Route>
           <Route path='/blindcreditcard'>
             <BlindCreditCard/>
           </Route>
@@ -220,6 +225,9 @@ function App(){
             </Route>
           <Route path='/blindaccount'>
             <BlindAccount/>
+          </Route>
+          <Route path='/blindnotification'>
+            <BlindNotification/>
           </Route>
           
           <Route path='/BlindLogin'>

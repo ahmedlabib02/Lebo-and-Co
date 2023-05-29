@@ -14,8 +14,8 @@ function BillCard({ bill }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   let icon = <GoLightBulb />;
-  if (bill.type === 'water') icon = <IoWaterOutline />;
-  else if (bill.type === 'telephone') icon = <BsTelephone />;
+  if (bill.type === 'water') icon = <IoWaterOutline  />;
+  else if (bill.type === 'telephone') icon = <BsTelephone  />;
   else if (bill.type === 'gas') icon = <MdGasMeter />;
 
   const handleBillClick = () => {

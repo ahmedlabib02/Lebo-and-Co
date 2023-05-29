@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const BlindTransfers = () => {
+const BlindTransfers = ({setFlag}) => {
   const [transfer, setTransfer] = useState({
     type: '',
     accountName: '',
@@ -68,7 +68,10 @@ const BlindTransfers = () => {
     SpeechRecognition.stopListening();
   };
 
-
+ const handleSubmit = ()=>{
+  speak('Transfer successful');
+  setFlag(false);
+ }
   
 
   return (
@@ -131,7 +134,7 @@ const BlindTransfers = () => {
          
           className="text-3xl bg-blue-500 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           onFocus={() => speak('Do you want to submit?')}
-          onClick={() => speak('Transfer successful')}
+          onClick={handleSubmit}
         >
           Submit Transfer
         </button>

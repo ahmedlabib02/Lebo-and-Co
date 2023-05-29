@@ -1,25 +1,15 @@
 function CCAppliedDetails({ creditCard }) {
- 
-   
-    return (<div>
-      <div className="text-gray-800 align-items-center text-center p-4 rounded-lg leading-relaxed justify-center ">
-        <h2 className="text-3xl font-bold mb-4"> Credit Card Application Number: {creditCard.CCid}</h2>
-        
-        <p className="text-lg mb-2"> &nbsp; &nbsp; &nbsp; <b>Name:</b> {creditCard.Name}</p>
-        <p className="text-lg mb-2"> &nbsp; &nbsp; &nbsp; <b>Amount:</b> {creditCard.Amount}</p>
-        <p className="text-lg mb-2"> &nbsp; &nbsp; &nbsp; <b>Date:</b> {creditCard.date}</p>
-        <p className="text-lg mb-2"> &nbsp; &nbsp; &nbsp; <b>Type:</b> {creditCard.Type}</p>
-        &nbsp; &nbsp; &nbsp; <button 
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                   >
-                  View Files
-                  
-                </button>
-        
+  return (
+    <div>
+      <div className="bg-white rounded-lg shadow-lg p-8 text-gray-800 text-center">
+        <h2 className="text-3xl font-bold mb-4">Credit Card Application Number: {creditCard.CCid}</h2>
+        <p className="text-lg mb-2"><b>Name:</b> {creditCard.Name}</p>
+        <p className="text-lg mb-2"><b>Amount:</b> {creditCard.Amount}</p>
+        <p className="text-lg mb-2"><b>Date:</b> {creditCard.date}</p>
+        <p className="text-lg mb-2"><b>Type:</b> {creditCard.Type}</p>
+      </div>
+    </div>
+  );
+}
 
-      </div>
-      </div>
-    );
-  }
-  
-  export default CCAppliedDetails;
+export default CCAppliedDetails;

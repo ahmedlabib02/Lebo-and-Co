@@ -1,27 +1,19 @@
-import React from 'react';
 import { useState,useRef } from "react";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-const BlindCardTwo = () => {
-  const { transcript, resetTranscript } = useSpeechRecognition();
-  
-  const [isOpen,setIsOpen] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const [confirmationMessage, setConfirmationMessage] = useState("");
+const LoanDetails = ({ loan, setFlag }) => {
+    const [isOpen, setIsOpen] = useState(false); 
+    const { transcript, resetTranscript } = useSpeechRecognition();
+    const [paymentMethod, setPaymentMethod] = useState("");
+     const [confirmationMessage, setConfirmationMessage] = useState("");
 
-  const speak = (text) => {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      speechSynthesis.speak(utterance);
-    } else {
-      console.error('Speech synthesis is not supported in this browser.');
-    }
-  };
-
-  const handlePay = ()=>{
-    setIsOpen(true);
-  }
-
-  const inputRef = useRef(null);
+    const speak = (text) => {
+        if ("speechSynthesis" in window) {
+          const utterance = new SpeechSynthesisUtterance(text);
+          speechSynthesis.speak(utterance);
+        }
+      };
+      
+      const inputRef = useRef(null);
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -53,37 +45,29 @@ const BlindCardTwo = () => {
     resetTranscript();
     SpeechRecognition.stopListening();
   };
+  const handlePay = ()=>{
 
+    setIsOpen(true);
+  }
   const handleSubmit =()=>{
     speak('payment is set successful')
-    setIsOpen(false);
+    setFlag(false);
   };
 
-   
+
     
-
-
-   
-
-  // Function to speak the text when component renders
-  React.useEffect(() => {
-    speak('Credit Card 2. Full Name: Ahmed Labib. Card Number: 1234 1234 1234 1234. Expiration Date: 04/2026. CVC: 123. Credit Limit: $9000. Remaining Credit: $1000.');
-  }, []);
-
-  return (
-    <div className="bg-black text-white h-screen flex flex-col items-center justify-center">
-      <div className="flex flex-col items-center gap-8 ">
-        <div>
-          <h2 className="text-5xl font-bold mb-4">CreditCard 2</h2>
-          <p className="text-lg mb-2">Full Name: Ahmed Labib</p>
-          <p className="text-lg mb-2">Card Number: 1234 1234 1234 1234</p>
-          <p className="text-lg mb-2">Expiration Date: 04/2026</p>
-          <p className="text-lg mb-2">CVC: 123</p>
-          <p className="text-lg mb-2">Credit Limit: $9000</p>
-          <p className="text-lg mb-2">Remaining Credit: $1000</p>
-        </div>
-        <button className="text-3xl bg-blue-500 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 mr-12 focus:ring-blue-500 mt-12" onClick={handlePay} onFocus={()=>speak('Your are on the pay button')}>
-            Pay bill
+    return (<div className="bg-black">
+            <div className="text-white">
+        <h2 className="text-4xl font-bold mb-8">Loan Details</h2>
+        <p className="text-2xl">Loan Type: {loan.type}</p>
+        <p className="text-2xl">Loan Amount: ${loan.amount}</p>
+        <p className="text-2xl">Due Date: {loan.dueDate}</p>
+        <p className="text-2xl">Interest Rate: {loan.interestRate}</p>
+        <p className="text-2xl">Repayment Term: {loan.term}</p>
+        <p className="text-2xl">Remaining Balance: {loan.remainingBalance}</p>
+      </div>
+      <button className="text-3xl bg-blue-500 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 mr-12 focus:ring-blue-500 mt-12" onClick={handlePay} onFocus={()=>speak('Your are on the pay button')}>
+            Pay installment
           </button>
           {isOpen && (<div className="mt-12 ">
         <form  className="flex flex-col">
@@ -94,7 +78,6 @@ const BlindCardTwo = () => {
             name="paymentMethod"
             value={paymentMethod}
             required
-            className="text-black"
             onFocus={handleMethodFocus}
             onBlur={handleMethodBlur}
             ref={inputRef}
@@ -108,7 +91,6 @@ const BlindCardTwo = () => {
             id="confirmationMessage"
             name="confirmationMessage"
             value={confirmationMessage}
-            className="text-black"
             required
             onFocus={handleMessageFocus}
             onBlur={handleMessageBlur}
@@ -122,9 +104,8 @@ const BlindCardTwo = () => {
             Submit</button>
         </div>
       )}
-      </div>
     </div>
-  );
-};
-
-export default BlindCardTwo;
+      
+    );
+  };
+  export default LoanDetails;

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { MdNavigateBefore, MdNavigateNext, MdDone } from "react-icons/md";
 import { FaFileAlt, FaUser } from "react-icons/fa";
-
+import Modal from 'react-modal';
 import AccountPersonalInfo from "./accountPersonalInfo";
 import DocumentsInfo from "./openAccountDocs";
 
 function AccountApplicationForm(){
         const [page, setPage] = useState(0);
+        const [isModalOpen, setIsModalOpen] = useState(false);
       const [formData, setFormData] = useState({
         purpose: "",
         depositAmount:"",
@@ -28,14 +29,15 @@ function AccountApplicationForm(){
         return true; // No validation for other pages
       };
       
-      
+      const closeModal = () => {
+        setIsModalOpen(false);
+      };
       
     
       const handleNextClick = () => {
         if (isValidForm()) {
           if (page === 1) {
-            alert("FORM SUBMITTED");
-            console.log(formData);
+            setIsModalOpen(true);
           } else {
             setPage((currPage) => currPage + 1);
           }
@@ -120,6 +122,25 @@ function AccountApplicationForm(){
               </div>
             
           </div>
+          <Modal
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  contentLabel="Set Reminder Modal"
+  className="modal"
+  overlayClassName="modal-overlay"
+>
+        <h2 className="text-2xl font-bold mb-4">Opening Account Application Confirmation</h2>
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-2">By clicking 'Submit,' you acknowledge that the information provided is accurate and complete to the best of your knowledge. Our team will review your application and may contact you for additional information if needed. Thank you for choosing our bank for your banking needs!"</label>
+         
+          <button
+            className="bg-green-500 text-white text-lg px-4 py-2 rounded-lg self-start"
+            onClick={closeModal}
+          >
+            Submit
+          </button>
+        </div>
+      </Modal>
         </div>
       );
     

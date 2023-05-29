@@ -5,9 +5,11 @@ import LoanType from "./LoanType";
 import CarInfo from "./CarInfo";
 import PersonalInfo from "./PersonalLoanInfo";
 import DocumentInfo from "./DocumentsInfo";
+import Modal from 'react-modal';
 
 function LoanApplicationForm() {
   const [page, setPage] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     loanType: "",
     carModel: "",
@@ -46,8 +48,7 @@ function LoanApplicationForm() {
   const handleNextClick = () => {
     if (isValidForm()) {
       if (page === 2) {
-        alert("FORM SUBMITTED");
-        console.log(formData);
+        setIsModalOpen(true);
       } else {
         setPage((currPage) => currPage + 1);
       }
@@ -55,6 +56,10 @@ function LoanApplicationForm() {
       alert("Please fill in all the required fields.");
     }
   };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
 
   const handlePrevClick = () => {
 
@@ -141,6 +146,25 @@ function LoanApplicationForm() {
           </div>
         )}
       </div>
+      <Modal
+  isOpen={isModalOpen}
+  onRequestClose={closeModal}
+  contentLabel="Set Reminder Modal"
+  className="modal"
+  overlayClassName="modal-overlay"
+>
+        <h2 className="text-2xl font-bold mb-4">Loan Application Confirmation</h2>
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-2">By clicking 'Submit,' you agree to the terms and conditions of the Loan Application Submission. Thank you for choosing our services!"</label>
+         
+          <button
+            className="bg-green-500 text-white text-lg px-4 py-2 rounded-lg self-start"
+            onClick={closeModal}
+          >
+            Submit
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 }
