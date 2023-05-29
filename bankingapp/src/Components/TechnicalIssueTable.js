@@ -10,17 +10,39 @@ function TechnicalIssueTable() {
     {
       reportId: 1,
       username: "user1",
-      issueDescription: "Site loading slowly",
-      date: "2023-05-20",
-      status: "Open"
+      issueDescription: "Unauthorized transaction on account",
+      date: "2023-05-25",
+      status: "Investigating",
+      severity: "High",
+      assignedTo: "Fraud Detection Team",
+      resolution: "Under Investigation",
+      reportDescription:
+        "A customer has reported an unauthorized transaction on their account. The transaction was made without their knowledge or consent, indicating a potential security breach or fraudulent activity. The matter is being investigated by the Fraud Detection Team to identify the source and resolve the issue as quickly as possible."
     },
     {
       reportId: 2,
       username: "user2",
-      issueDescription: "Error message displayed on checkout",
-      date: "2023-05-25",
-      status: "In Progress"
+      issueDescription: "ATM cash withdrawal failure",
+      date: "2023-05-28",
+      status: "Open",
+      severity: "Medium",
+      assignedTo: "Technical Support",
+      resolution: "Pending",
+      reportDescription:
+        "Several customers have reported issues with cash withdrawals from ATMs. After entering the withdrawal amount, the machine does not dispense cash, causing inconvenience and frustration. The problem needs to be addressed by the Technical Support team to ensure uninterrupted access to cash for customers."
+    },{
+      reportId: 3,
+      username: "user3",
+      issueDescription: "Online banking login error",
+      date: "2023-05-29",
+      status: "Open",
+      severity: "Low",
+      assignedTo: "IT Support",
+      resolution: "Pending",
+      reportDescription:
+        "Some customers are experiencing difficulties logging into their online banking accounts. After entering their credentials, an error message appears, preventing them from accessing their accounts and conducting online transactions. The IT Support team is working to identify the cause and restore normal login functionality."
     }
+
   ];
   
   const handleViewDetails = (reportId) => {
