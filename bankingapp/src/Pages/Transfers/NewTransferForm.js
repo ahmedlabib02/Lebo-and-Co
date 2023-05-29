@@ -134,7 +134,7 @@ const handleNextClick = () => {
       </div>
       <div className="bg-white rounded-lg p-8 w-full ml-12">
         <div className="mb-8 ">
-          <h1 className="text-3xl font-bold mb-4">{FormTitles[page]}</h1>
+          <h1 className="text-3xl font-bold mb-4 text-center">{FormTitles[page]}</h1>
           {PageDisplay()}
         </div>
         {page !== 0 && (

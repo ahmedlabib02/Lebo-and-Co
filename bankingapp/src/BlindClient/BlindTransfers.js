@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const LoanApplicationForm = ({setFlag}) => {
-  const [loan, setLoan] = useState({
-    loanType: '',
-    amount: '',
-    purpose: ''
+const BlindTransfers = ({setFlag}) => {
+  const [transfer, setTransfer] = useState({
+    type: '',
+    accountName: '',
+    amount: ''
   });
   const inputRef = useRef(null);
 
@@ -26,8 +26,8 @@ const LoanApplicationForm = ({setFlag}) => {
     }
   };
 
-  const handleLoanTypeFocus = () => {
-    speak('DO you want car or personal loan ?');
+  const handleTransferTypeFocus = () => {
+    speak('DO you want internal or domestic or international loan ?');
     
   };
   
@@ -38,8 +38,8 @@ const LoanApplicationForm = ({setFlag}) => {
     
   };
 
-  const handlePurposeFocus = () => {
-    speak('state the purpose of the loan');
+  const handleAccountNameFocus = () => {
+    speak('state the owner name of the account');
     
     
   };
@@ -49,67 +49,48 @@ const LoanApplicationForm = ({setFlag}) => {
     
   };
 
-  const handleLoanTypeBlur = () => {
-    setLoan({ ...loan, loanType: transcript });
+  const handleTransferTypeBlur = () => {
+    setTransfer({ ...transfer, type: transcript });
     resetTranscript();
     SpeechRecognition.stopListening();
   };
 
 
   const handleAmountBlur = () => {
-    setLoan({ ...loan, amount: transcript });
+    setTransfer({ ...transfer, amount: transcript });
     resetTranscript();
     SpeechRecognition.stopListening();
   };
 
-  const handlePurposeBlur = () => {
-    setLoan({ ...loan, purpose: transcript });
+  const handleAccountNameBlur = () => {
+    setTransfer({ ...transfer, accountName: transcript });
     resetTranscript();
     SpeechRecognition.stopListening();
   };
 
-  const handleSubmit = ()=>{
-   speak('Application successful');
-   setFlag(false);
-  }
-
-
+ const handleSubmit = ()=>{
+  speak('Transfer successful');
+  setFlag(false);
+ }
   
 
   return (
     <div className="text-black">
       <form onSubmit={handleFormSubmit} className="text-center">
-        <h2 className="text-4xl font-bold mb-8">Loan Application Form</h2>
+        <h2 className="text-4xl font-bold mb-8">Transfer Form</h2>
         <div className="mb-6">
           <label htmlFor="loanType" className="text-2xl text-white">
-            Loan Type:
+            Transfer Type:
           </label>
           <input
             type="text"
-            id="loanType"
+            id="type"
             className="text-black text-2xl px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={loan.loanType}
-            onFocus={handleLoanTypeFocus}
-            onBlur={handleLoanTypeBlur}
+            value={transfer.type}
+            onFocus={handleTransferTypeFocus}
+            onBlur={handleTransferTypeBlur}
             onKeyPress={handleKeyPress}
             ref={inputRef}
-            onClick={() => SpeechRecognition.startListening()}
-          />
-        </div>
-        <div className="mb-6">
-          <label htmlFor="amount" className="text-2xl text-white">
-            Loan Amount:
-          </label>
-          <input
-            type="text"
-            id="amount"
-            className="text-black text-2xl px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 "
-            name="amount"
-            value={loan.amount}
-            onFocus={handleAmountFocus}
-            onBlur={handleAmountBlur}
-            ref={inputRef}
-            onKeyPress={handleKeyPress}
             onClick={() => SpeechRecognition.startListening()}
           />
         </div>
@@ -119,12 +100,29 @@ const LoanApplicationForm = ({setFlag}) => {
           </label>
           <input
             type="text"
-            id="purpose"
+            id="accountName"
             className="text-black text-2xl px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            name="purpose"
-            value={loan.purpose}
-            onFocus={handlePurposeFocus}
-            onBlur={handlePurposeBlur}
+            name="accountName"
+            value={transfer.accountName}
+            onFocus={handleAccountNameFocus}
+            onBlur={handleAccountNameBlur}
+            ref={inputRef}
+            onKeyPress={handleKeyPress}
+            onClick={() => SpeechRecognition.startListening()}
+          />
+        </div>
+        <div className="mb-6">
+          <label htmlFor="amount" className="text-2xl text-white">
+            Transfer Amount:
+          </label>
+          <input
+            type="text"
+            id="amount"
+            className="text-black text-2xl px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 "
+            name="amount"
+            value={transfer.amount}
+            onFocus={handleAmountFocus}
+            onBlur={handleAmountBlur}
             ref={inputRef}
             onKeyPress={handleKeyPress}
             onClick={() => SpeechRecognition.startListening()}
@@ -133,15 +131,18 @@ const LoanApplicationForm = ({setFlag}) => {
         
       </form>
       <button
+         
           className="text-3xl bg-blue-500 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           onFocus={() => speak('Do you want to submit?')}
           onClick={handleSubmit}
         >
-          Submit Application
+          Submit Transfer
         </button>
     </div>
   );
   
 };
 
-export default LoanApplicationForm;
+export default BlindTransfers;
+
+

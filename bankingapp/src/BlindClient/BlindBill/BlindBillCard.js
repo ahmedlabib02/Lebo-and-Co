@@ -102,10 +102,6 @@ function BlindBillCard({ bill }) {
     
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    
-  };
 
   const handleMethodBlur = () => {
     setPaymentMethod( transcript );
@@ -159,15 +155,15 @@ function BlindBillCard({ bill }) {
         </>
       )}
 
-      {payFormOpen && (<div>
-        <form onSubmit={handlePayFormSubmit}>
-          <label htmlFor="paymentMethod">Payment Method:</label>
+      {payFormOpen && (<div className="mt-12 ">
+        <form onSubmit={handlePayFormSubmit} className="flex flex-col">
+          <label htmlFor="paymentMethod" className="text-2xl text-white ">Payment Method:</label>
           <input
             type="text"
             id="paymentMethod"
             name="paymentMethod"
             value={paymentMethod}
-            onChange={handlePaymentMethodChange}
+            
             required
             onFocus={handleMethodFocus}
             onBlur={handleMethodBlur}
@@ -176,13 +172,13 @@ function BlindBillCard({ bill }) {
             onClick={() => SpeechRecognition.startListening()}
           />
           
-          <label htmlFor="confirmationMessage">Confirmation Message:</label>
+          <label htmlFor="confirmationMessage" className="text-2xl text-white">Confirmation Message:</label>
           <input
             type="text"
             id="confirmationMessage"
             name="confirmationMessage"
             value={confirmationMessage}
-            onChange={handleConfirmationMessageChange}
+            
             required
             onFocus={handleMessageFocus}
             onBlur={handleMessageBlur}
@@ -192,19 +188,19 @@ function BlindBillCard({ bill }) {
           />
         </form>
         <button type="submit" onFocus={() => speak('press enter to confirm your payment?')}
-          onClick={() => speak('payment is set successful')}>Submit</button>
+          onClick={() => speak('payment is set successful')} className="text-3xl bg-blue-500 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mt-12">
+            Submit</button>
         </div>
       )}
 
-      {reminderFormOpen && (<div>
+      {reminderFormOpen && (<div className="mt-12">
         <form onSubmit={handleReminderFormSubmit}>
-          <label htmlFor="reminderDate">Reminder Date:</label>
+          <label htmlFor="reminderDate" className="text-2xl text-white">Reminder Date:</label>
           <input
-            type="date"
+            type="text"
             id="reminderDate"
             name="reminderDate"
             value={reminderDate}
-            onChange={handleReminderDateChange}
             required
             onFocus={handleDateFocus}
             onBlur={handleDateBlur}
@@ -213,7 +209,7 @@ function BlindBillCard({ bill }) {
             onClick={() => SpeechRecognition.startListening()}
           />
         </form>
-        <button type="submit"onFocus={() => speak('do you confirm?')}
+        <button type="submit"onFocus={() => speak('do you confirm?')}  className="text-3xl bg-blue-500 text-white px-8 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           onClick={() => speak('reminder is set successfuly')}  >Submit</button>
         </div>
       )}

@@ -4,16 +4,19 @@ import { TableContainer, Table, TableBody, TableRow, TableCell, Paper,TableHead,
 function ManageAccountTable() {
     const [accounts, setAccounts] = useState([
         {
+          id:1,
           username: "user1",
           email: "user1@example.com",
           status: "Active"
         },
         {
+          id:2,
           username: "user2",
           email: "user2@example.com",
           status: "Blocked"
         },
         {
+          id:3,
           username: "user3",
           email: "user3@example.com",
           status: "Active"
@@ -47,12 +50,12 @@ function ManageAccountTable() {
         return (
           <div className="mt-8" style={{ textAlign: "center" }}>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <div className="text-2xl mt-2">
+              <div className="text-2xl mt-2 mb-4">
                 Search: 
                 </div>
-              <TextField className="ml-2"
+              <TextField className="ml-4"
                 type="text"
-                placeholder="Search users..."
+                placeholder="Search by Id"
                 value={searchQuery}
                 onChange={handleSearchQueryChange}
                 variant="outlined"
@@ -64,6 +67,7 @@ function ManageAccountTable() {
               <Table aria-aria-label="account table">
                 <TableHead>
                   <TableRow>
+                  <TableCell style={{ width: "25%" }}>Id</TableCell>
                     <TableCell style={{ width: "25%" }}>Username</TableCell>
                     <TableCell style={{ width: "35%" }}>Email</TableCell>
                     <TableCell style={{ width: "20%" }}>Status</TableCell>
@@ -72,7 +76,8 @@ function ManageAccountTable() {
                 </TableHead>
                 <TableBody>
                   {filteredAccounts.map((account) => (
-                    <TableRow key={account.username}>
+                    <TableRow key={account.id}>
+                      <TableCell>{account.id}</TableCell>
                       <TableCell>{account.username}</TableCell>
                       <TableCell>{account.email}</TableCell>
                       <TableCell>{account.status}</TableCell>
