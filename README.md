@@ -13,6 +13,7 @@ Welcome to the Banking System Frontend project. This comprehensive banking syste
 - [Login Credentials](#login-credentials)
 - [Authors](#authors)
 - [License](#license)
+- [Additional Documentation](#additional-documentation)
 
 ## Functionalities by User Type
 
@@ -86,3 +87,13 @@ You can use the following login credentials for testing:
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md). You are free to use, modify, and distribute this software in accordance with the terms specified in the license.
+
+## Additional Documentation
+
+In addition to the frontend code, this repository also contains various documentation resources to assist with the development and understanding of the project:
+
+- User Stories: Detailed descriptions of user interactions and functionalities.
+- Class Diagram: An overview of the project's class structure.
+- Components Diagram: A visual representation of the project's components and subsystems.
+- ERD (Entity-Relationship Diagram): A diagram depicting the database structure.
+- Schema: The database schema used by the application.
