@@ -2,6 +2,18 @@
 
 Welcome to the Banking System Frontend project. This comprehensive banking system frontend is developed using React, Tailwind CSS, and Material UI. The system caters to various user roles, each with specific functionalities.
 
+## Table of Contents
+
+- [Functionalities by User Type](#functionalities-by-user-type)
+  - [Normal Clients](#normal-clients)
+  - [Blind Clients](#blind-clients)
+  - [Bankers](#bankers)
+  - [System Administrators](#system-administrators)
+- [Getting Started](#getting-started)
+- [Login Credentials](#login-credentials)
+- [Authors](#authors)
+- [License](#license)
+
 ## Functionalities by User Type
 
 ### Normal Clients
@@ -17,7 +29,7 @@ Normal clients can access the following functionalities:
 7. **Manage Credit Card Points**: View credit card points and redeem them for cashback.
 8. **Transfer Money**: Transfer money to other bank accounts, whether internal, domestic, or international.
 9. **Report Credit Card Issues**: Report credit card theft, loss, or damage and apply for replacements.
-10. **Pay Credit Card Bills**: Pay their credit card bills partially or in full using bank transfers, or third party applications.
+10. **Pay Credit Card Bills**: Pay their credit card bills partially or in full using bank transfers, or third-party applications.
 11. **Set/Receive Reminders**: Set and receive reminders for payments due for bills, loans, or credit card bills.
 12. **View Credit Card Info**: View credit card details as well as the credit card transactions. 
 13. **Third-Party Bill Payments**: Have the option to pay gas, water, electricity, or telephone bills using third-party apps or through the bank itself.
@@ -68,7 +80,7 @@ You can use the following login credentials for testing:
 
 - [Mostafa elKout](https://github.com/Elkott1)
 - [George Sherif](https://github.com/georgesheriff)
-- [Yehia Sebaei]([https://github.com/ahmedlabib02?tab=following](https://github.com/Y-sebaei))
+- [Yehia Sebaei](https://github.com/Y-sebaei)
 - [Ahmed Badawi](https://github.com/A-Badawi)
 
 ## License
